@@ -1,0 +1,55 @@
+.nav_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.nav_container nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-hor-spacing);
+}
+
+.nav_container nav .navLinks_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-hor-spacing);
+}
+
+nav .navLinks_container li {
+  list-style: none;
+  cursor: pointer;
+}
+
+nav .navButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-hor-spacing);
+}
+
+.navButtons .cta_Button {
+  width: var(--small-button-width);
+  height: var(--small-button-height);
+  border-radius: var(--small-button-radius);
+  border: none;
+  background-color: var(--focus-color);
+  color: var(--second-primary-color);
+  font-family: var(--secondary-font-family);
+  font-weight: var(--button-font-weight);
+  cursor: pointer;
+}
+
+.navButtons .burger_Button {
+  width: var(--smallest-button-width);
+  height: var(--smallest-button-height);
+  border: none;
+  border-radius: var(--smallest-button-radius);
+  background-color: var(--focus-color);
+  font-size: 30px;
+  color: var(--second-primary-color);
+  cursor: pointer;
+}
