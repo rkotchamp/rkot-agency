@@ -1,0 +1,143 @@
+.burger_menu_container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  animation: mainContainerSlideIn 0.5s forwards;
+}
+
+.burger_menu_container .mainContainerOpen {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.burger_menu_container .first__division {
+  width: 60%;
+  background-color: var(--body-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--big-vert-spacing);
+  /* animation: firstDivisionSlideIn 0.8s forwards; */
+}
+.first__division .about_topic {
+  width: 50%;
+  animation: textSlideInUp 1s ease-in;
+  /* background-color: red; */
+}
+.first__division .about_topic p {
+  font-family: var(--secondary-font-family);
+  font-weight: var(--mid-text-font-weight);
+  color: var(--focus-color);
+}
+
+.first__division .contactPane {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  /* align-items: self-start; */
+  width: 50%;
+  animation: textSlideInUp 1s ease-in;
+}
+
+.first__division .contactPane p {
+  font-size: var(--body-font-size);
+  color: var(--primary-color);
+  font-family: var(--secondary-font-family);
+  margin-top: 5px;
+}
+
+.burger_menu_container .first__division .menu__topic {
+  font-size: var(--mid-text-font-size);
+  max-width: 530px;
+  font-family: var(--secondary-font-family);
+  font-weight: var(--button-font-weight);
+  color: var(--primary-color);
+}
+
+.burger_menu_container .second__division {
+  width: 40%;
+  background-color: var(--focus-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* animation: mainContainerSlideIn 1s forwards; */
+}
+
+.burger_menu_container .second__division ul li {
+  list-style: none;
+  font-size: var(--hero-text-font-size);
+  font-family: var(--secondary-font-family);
+  font-weight: var(--button-font-weight);
+  color: var(--primary-color);
+  margin-top: var(--small-vert-spacing);
+  animation: textSlideInUp 1s ease-in;
+  cursor: pointer;
+}
+.inline_nav .inline_navButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-hor-spacing);
+}
+
+.inline_navButtons .inline_cta_Button {
+  width: var(--small-button-width);
+  height: var(--small-button-height);
+  border-radius: var(--small-button-radius);
+  border: none;
+  background-color: var(--second-primary-color);
+  color: var(--body-color);
+  font-family: var(--secondary-font-family);
+  font-weight: var(--button-font-weight);
+  cursor: pointer;
+}
+
+.inline_navButtons .close_burger_Button {
+  width: var(--smallest-button-width);
+  height: var(--smallest-button-height);
+  border: none;
+  border-radius: var(--smallest-button-radius);
+  background-color: var(--second-primary-color);
+  font-size: 5em;
+  color: var(--body-color);
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger_menu_container .inline_nav {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+  animation: textSlideInUp 0.8s ease-in;
+  /* background-color: red; */
+}
+
+@keyframes mainContainerSlideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes textSlideInUp {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

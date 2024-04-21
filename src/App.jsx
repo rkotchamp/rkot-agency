@@ -1,14 +1,23 @@
+import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import Hero from "../src/Pages/HeroPage/Hero";
-import NavBar from "../src/Components/NavBar/NavBar";
+import NavShowContext from "./context/NavShowContext";
+import Home from "./Pages/HomePage/Home";
+// import BurgerMenu from "../OpenBurgerMenu/BurgerMenu";
+
 import "./App.css";
+import BurgerMenu from "../src/Components/OpenBurgerMenu/BurgerMenu";
 
 function App() {
+  // const { showNav } = useContext(NavShowContext);
+  // const { hideNav } = use Context(NavShowContext);
   return (
     <>
-      <NavBar />
+      {/* {hideNav && <NavBar />} */}
+
+      {/* {showNav && <BurgerMenu />} */}
+
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </>
   );

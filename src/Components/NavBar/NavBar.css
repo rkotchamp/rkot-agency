@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* background-color: red; */
 }
 
 .nav_container nav {
@@ -22,6 +21,9 @@
 nav .navLinks_container li {
   list-style: none;
   cursor: pointer;
+  font-family: var(--primary-font-family);
+  font-size: var(--small-subHeading-font-size);
+  /* font-weight: 6; */
 }
 
 nav .navButtons {
@@ -49,7 +51,33 @@ nav .navButtons {
   border: none;
   border-radius: var(--smallest-button-radius);
   background-color: var(--focus-color);
-  font-size: 30px;
+  font-size: 40px;
   color: var(--second-primary-color);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* media queries */
+@media only screen and (max-width: 600px) {
+  .nav_container nav .navLinks_container {
+    display: none;
+  }
+  nav .navButtons .cta_Button {
+    display: none;
+  }
+  .navButtons .burger_Button {
+    width: var(--mobile-smallest-button-width);
+    height: var(--mobile-smallest-button-width);
+
+    border-radius: var(--smallest-button-radius);
+    background-color: var(--focus-color);
+    font-size: 20px;
+  }
+  .nav_container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 }

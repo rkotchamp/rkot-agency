@@ -1,0 +1,98 @@
+:root {
+  /* Desktop */
+  /* Spacing */
+  --small-hor-spacing: 26px;
+  --big-hor-spacing: 88px;
+  --small-vert-spacing: 27px;
+  --big-vert-spacing: 85px;
+
+  /* Colors */
+  --primary-color: #fffdf1;
+  --second-primary-color: #fff9d7;
+  --p-accent-color: #37379e;
+  --second-p-accent-color: #7766f8;
+  --focus-color: #e55169;
+  --body-color: #313638;
+
+  /* font sizes */
+  --body-font-size: 20px;
+  --small-subHeading-font-size: 16px;
+  --sub-heading-font-size: 25px;
+  --sub-heading-font-weight: 700;
+  --hero-text-font-size: 50px;
+  /* --hero-text-font-size: 48px; */
+  --mid-text-font-size: 30px;
+  --mid-text-font-weight: 500;
+  --hero-text-font-weight: 700;
+
+  /*font families  */
+  --primary-font-family: "Inter", sans-serif;
+  --secondary-font-family: "Futura", sans-serif;
+
+  /* Buttons */
+  --smallest-button-width: 88px;
+  --smallest-button-height: 88px;
+  --smallest-button-radius: 50%;
+
+  --small-button-width: 179px;
+  --small-button-height: 69px;
+  --small-button-radius: 45px;
+
+  --medium-button-width: 290px;
+  --medium-button-height: 47px;
+  --medium-button-radius: 27px;
+
+  --big-button-width: 413px;
+  --big-button-height: 61px;
+  --big-button-radius: 45px;
+  --button-font-weight: 700;
+  /* small devices (mobiles) */
+  --mobile-smallest-button-width: 59px;
+  --mobile-smallest-button-height: 59px;
+  --mobile-smallest-button-radius: 50%;
+}
+
+.hero_container {
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100vh;
+  padding-top: 30px;
+}
+.hero_container .divisions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  height: 80vh;
+}
+
+.textSpace h1 {
+  font-family: var(--secondary-font-family);
+  font-size: var(--hero-text-font-size);
+  font-weight: var(--hero-text-font-weight);
+  color: var(--p-accent-color);
+  text-transform: uppercase;
+  max-width: 750px;
+  max-height: 201px;
+  margin-bottom: var(--big-vert-spacing);
+}
+
+.textSpace p {
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+  font-size: var(--small-subHeading-font-size);
+  color: var(--focus-color);
+}
+
+.section-heroText .main-btn {
+  width: var(--big-button-width);
+  height: var(--big-button-height);
+  border-radius: var(--big-button-radius);
+  border: none;
+  background-color: var(--focus-color);
+  color: var(--second-primary-color);
+  font-size: var(--body-font-size);
+  text-transform: uppercase;
+  font-weight: var(--hero-text-font-weight);
+}

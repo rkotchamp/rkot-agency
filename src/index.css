@@ -1,4 +1,5 @@
 :root {
+  /* Desktop */
   /* Spacing */
   --small-hor-spacing: 26px;
   --big-hor-spacing: 88px;
@@ -18,10 +19,15 @@
   --small-subHeading-font-size: 16px;
   --sub-heading-font-size: 25px;
   --sub-heading-font-weight: 700;
-  --hero-text-font-size: 48px;
+  --hero-text-font-size: 50px;
+  /* --hero-text-font-size: 48px; */
+  --mid-text-font-size: 30px;
+  --mid-text-font-weight: 500;
   --hero-text-font-weight: 700;
-  --primary-font-family: Inter;
-  --secondary-font-family: Futura;
+
+  /*font families  */
+  --primary-font-family: "Inter", sans-serif;
+  --secondary-font-family: "Futura", sans-serif;
 
   /* Buttons */
   --smallest-button-width: 88px;
@@ -40,6 +46,10 @@
   --big-button-height: 61px;
   --big-button-radius: 45px;
   --button-font-weight: 700;
+  /* small devices (mobiles) */
+  --mobile-smallest-button-width: 59px;
+  --mobile-smallest-button-height: 59px;
+  --mobile-smallest-button-radius: 50%;
 }
 * {
   padding: 0;
