@@ -1,0 +1,7 @@
+.portfolio-container {
+  width: 100%;
+}
+
+.portfolio-grid {
+  display: grid;
+}

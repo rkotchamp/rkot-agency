@@ -1,0 +1,24 @@
+.grid-container {
+  width: 325px;
+  height: 267px;
+  background-color: red;
+  position: relative;
+}
+
+.grid-container img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  object-fit: cover;
+  transition: transform 0.5s ease-in;
+}
+.grid-container img:hover {
+  transform: scale(1.04);
+}
+
+.grid-container .titlesAndIndustry {
+  position: absolute;
+  color: white;
+  bottom: 10px;
+  left: 10.5px;
+}

@@ -1,8 +1,17 @@
+body.burger-menu-open {
+  overflow: hidden;
+}
+
+body.burger-menu-closed {
+  overflow: visible;
+}
+
 .burger_menu_container {
   width: 100%;
   height: 100vh;
   display: flex;
-  position: relative;
+  position: absolute;
+  top: 0;
   animation: mainContainerSlideIn 0.5s forwards;
 }
 

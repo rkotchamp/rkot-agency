@@ -1,12 +1,27 @@
+import { useEffect, useContext } from "react";
 import { IoIosClose } from "react-icons/io";
 import logo from "../../assets/Images/rkot logo.png";
-import { useContext } from "react";
+
 import NavShowContext from "../../context/NavShowContext";
 import "./BurgerMenu.css";
+import { DiStylus } from "react-icons/di";
 
 function BurgerMenu() {
   const { showNav, setShowNav } = useContext(NavShowContext);
   const { hideNav, setHideNav } = useContext(NavShowContext);
+
+  useEffect(() => {
+    // Using this condition to
+    if (showNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showNav]);
 
   const hideNavClick = () => {
     setShowNav(false);
@@ -16,7 +31,7 @@ function BurgerMenu() {
   return (
     <div className="burger_menu_container">
       <div className="inline_nav">
-        <img src={logo} alt="" />
+        <img src={logo} alt="rkot agency logo" />
         <div className="inline_navButtons">
           <button className="inline_cta_Button">GET IN TOUCH</button>
           <button className="close_burger_Button" onClick={hideNavClick}>

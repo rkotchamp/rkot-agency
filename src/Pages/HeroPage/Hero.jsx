@@ -14,8 +14,7 @@ function Hero() {
     <div className="hero_container">
       {/* Navbar section */}
       {hideNav && <NavBar />}
-      {showNav && <BurgerMenu />}
-
+      
       {/* The hero section */}
       <div className="divisions">
         <div className="section-heroText">
