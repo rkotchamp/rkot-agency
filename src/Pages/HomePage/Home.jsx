@@ -3,6 +3,7 @@ import Hero from "../HeroPage/Hero";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import PortfolioSection from "../../Components/PortfolioSection/PortfolioSection";
 import NavShowContext from "../../context/NavShowContext";
+import ServicesSection from "../../Components/ServicesSection/ServicesSection";
 
 import "./Home.css";
 
@@ -15,6 +16,7 @@ function Home() {
 
       <Hero />
       <PortfolioSection />
+      <ServicesSection />
     </div>
   );
 }

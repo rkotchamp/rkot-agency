@@ -5,8 +5,8 @@ function PortFolioGrid() {
   return (
     <div className="grid-container">
       <div className="titlesAndIndustry">
-        <p>Moffit</p>
-        <p>SaaS</p>
+        <p className="company-name">Moffit</p>
+        <p className="company-industry">SaaS</p>
       </div>
       <img src={gridImage} alt="" />
     </div>

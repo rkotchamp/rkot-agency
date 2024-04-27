@@ -1,7 +1,6 @@
 .grid-container {
   width: 325px;
   height: 267px;
-  background-color: red;
   position: relative;
 }
 
@@ -18,7 +17,26 @@
 
 .grid-container .titlesAndIndustry {
   position: absolute;
-  color: white;
-  bottom: 10px;
-  left: 10.5px;
+  color: var(--primary-color);
+  bottom: 15px;
+  left: 20.5px;
+}
+
+.titlesAndIndustry .company-name {
+  font-family: var(--secondary-font-family);
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.titlesAndIndustry .company-industry {
+  font-family: var(--secondary-font-family);
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    width: 366px;
+    height: 301px;
+  }
 }

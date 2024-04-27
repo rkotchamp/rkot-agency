@@ -50,6 +50,14 @@
   --mobile-smallest-button-width: 59px;
   --mobile-smallest-button-height: 59px;
   --mobile-smallest-button-radius: 50%;
+
+  --mobile-big-button-width: 220px;
+  --mobile-big-button-height: 44px;
+  --mobile-big-button-radius: 45px;
+  --mobile-big-button-font-size: 11px;
+
+  --mobile-body-font-size: 12px;
+  --mobile-hero-font-size: 28px;
 }
 
 .hero_container {
@@ -95,4 +103,42 @@
   font-size: var(--body-font-size);
   text-transform: uppercase;
   font-weight: var(--hero-text-font-weight);
+}
+
+@media only screen and (max-width: 600px) {
+  .hero_container .divisions {
+    flex-direction: column-reverse;
+    gap: 19px;
+    width: 100%;
+    height: 80vh;
+  }
+
+  .section-heroPicture img {
+    width: 243px;
+    height: 184px;
+  }
+  .textSpace h1 {
+    font-size: var(--mobile-hero-font-size);
+    max-width: 330px;
+    max-height: 120px;
+    margin-bottom: 30px;
+  }
+  .textSpace p {
+    font-size: var(--mobile-body-font-size);
+    width: 253px;
+  }
+
+  .section-heroText .main-btn {
+    width: var(--mobile-big-button-width);
+    height: var(--mobile-big-button-height);
+    border-radius: var(--mobile-big-button-radius);
+    font-size: var(--mobile-big-button-font-size);
+  }
+
+  .btnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: -20px;
+  }
 }

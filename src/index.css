@@ -50,6 +50,14 @@
   --mobile-smallest-button-width: 59px;
   --mobile-smallest-button-height: 59px;
   --mobile-smallest-button-radius: 50%;
+
+  --mobile-big-button-width: 220px;
+  --mobile-big-button-height: 44px;
+  --mobile-big-button-radius: 45px;
+  --mobile-big-button-font-size: 11px;
+
+  --mobile-body-font-size: 14px;
+  --mobile-hero-font-size: 28px;
 }
 * {
   padding: 0;

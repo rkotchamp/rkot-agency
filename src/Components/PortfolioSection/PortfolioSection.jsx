@@ -16,6 +16,7 @@ function PortfolioSection() {
         <PortFolioGrid />
         <PortFolioGrid />
       </div>
+      <button className="port-button">Unlock Hidden Gems</button>
     </div>
   );
 }

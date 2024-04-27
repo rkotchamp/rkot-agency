@@ -14,7 +14,7 @@ function Hero() {
     <div className="hero_container">
       {/* Navbar section */}
       {hideNav && <NavBar />}
-      
+
       {/* The hero section */}
       <div className="divisions">
         <div className="section-heroText">
@@ -24,7 +24,9 @@ function Hero() {
               Transform Your Brand with elite Design Solutions
             </h1>
           </div>
-          <button className="main-btn">Elevate Your Brand Now</button>
+          <div className="btnContainer">
+            <button className="main-btn">Elevate Your Brand Now</button>
+          </div>
         </div>
         <div className="section-heroPicture">
           <img src={writingBoardImage} alt="vector image of web designer" />

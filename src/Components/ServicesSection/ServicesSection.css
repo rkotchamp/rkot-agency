@@ -1,0 +1,125 @@
+.service-container {
+  width: 100%;
+  height: 804px;
+  background-color: var(--body-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 212px;
+}
+
+.service-container .firstPane {
+  display: flex;
+  gap: 109px;
+  justify-content: center;
+  width: 100%;
+}
+
+.service-header p {
+  font-family: var(--secondary-font-family);
+  color: var(--focus-color);
+  text-transform: uppercase;
+  font-size: var(--small-subHeading-font-size);
+  width: 196px;
+  height: 36px;
+}
+
+.service-header h2 {
+  font-family: var(--secondary-font-family);
+  text-transform: capitalize;
+  color: var(--primary-color);
+  font-size: var(--sub-heading-font-size);
+  max-width: 757px;
+  max-height: 142px;
+}
+/* .firstPane {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+} */
+
+.firstPane .notes p {
+  font-family: var(--secondary-font-family);
+  font-size: var(--body-font-size);
+  color: var(--primary-color);
+  max-width: 413px;
+}
+
+.firstPane .notes p span {
+  border-bottom: 2px solid var(--primary-color);
+  text-transform: uppercase;
+}
+
+.secondPane {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 131px;
+  margin-left: -112px;
+}
+.secondPane .firstWeb {
+  width: 302px;
+  height: 142px;
+  /* display: flex; */
+}
+
+.secondPane .firstWeb .headingsIn {
+  color: var(--focus-color);
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+}
+
+.secondPane .firstWeb .text {
+  color: var(--primary-color);
+  font-size: var(--body-font-size);
+  font-family: var(--secondary-font-family);
+  text-transform: capitalize;
+  max-width: 304px;
+}
+
+@media only screen and (max-width: 600px) {
+  .service-container {
+    height: auto;
+    gap: 50px;
+    padding-top: 35px;
+  }
+
+  .service-container .firstPane {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .firstPane .notes p {
+    font-family: var(--secondary-font-family);
+    font-size: 14px;
+    text-transform: capitalize;
+    max-width: 366px;
+  }
+
+  .service-header h2 {
+    font-size: var(--small-subHeading-font-size);
+    max-width: 357px;
+  }
+
+  .service-header p {
+    font-size: var(--mobile-body-font-size);
+  }
+
+  .secondPane {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-left: 0;
+  }
+  .secondPane .firstWeb .text {
+    font-size: var(--mobile-body-font-size);
+    max-width: 324px;
+  }
+  .secondPane .firstWeb .headingsIn {
+    font-size: var(--mobile-body-font-size);
+    width: 209px;
+    height: 36px;
+  }
+}
