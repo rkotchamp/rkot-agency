@@ -8,10 +8,12 @@
 
   /* Colors */
   --primary-color: #fffdf1;
+  --dark-primary-color: #e6e5e5;
   --second-primary-color: #fff9d7;
   --p-accent-color: #37379e;
   --second-p-accent-color: #7766f8;
   --focus-color: #e55169;
+  --light-focus-color: #ed7d8f;
   --body-color: #313638;
 
   /* font sizes */
