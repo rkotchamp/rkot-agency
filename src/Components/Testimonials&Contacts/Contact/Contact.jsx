@@ -1,4 +1,6 @@
 import { useState } from "react";
+import prevBtn from "../../../assets/Images/prev.png";
+import nextBtn from "../../../assets/Images/next.png";
 import "./Contact.css";
 
 const contactDetails = [
@@ -59,6 +61,17 @@ function Contact() {
             placeholder="YOUR BUDGET RANGE"
           />
         </form>
+      </div>
+      <div className="positionBtn">
+        <div className="btns">
+          <button className="prevBtn">
+            <img src={prevBtn} alt="previous icon" />
+          </button>
+          <button className="nextBtn">
+            NEXT
+            <img src={nextBtn} alt="Next button icon" />
+          </button>
+        </div>
       </div>
     </div>
   );

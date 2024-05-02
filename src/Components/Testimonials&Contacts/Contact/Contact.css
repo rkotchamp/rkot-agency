@@ -67,17 +67,17 @@
 .formSpace {
   width: 100%;
   height: 80%;
-  background-color: blue;
+  /* background-color: blue; */
 }
 .formSpace .form {
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 27px;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .form .input {
@@ -95,4 +95,40 @@
   outline: 1px solid var(--light-focus-color);
   font-size: 18px;
   border: 1px solid var(--light-focus-color);
+}
+
+.positionBtn {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 9%;
+}
+
+.btns {
+  width: 150px;
+  height: 50px;
+  background-color: var(--focus-color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns .prevBtn {
+  height: 100%;
+  width: 40%;
+  border: none;
+  background-color: var(--light-focus-color);
+  border-radius: 5px 0px 0px 5px;
+}
+
+.btns .nextBtn {
+  width: 60%;
+  height: 100%;
+  border: none;
+  background-color: var(--focus-color);
+  color: var(--primary-color);
+  border-radius: 0px 5px 5px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
