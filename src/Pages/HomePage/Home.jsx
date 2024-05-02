@@ -4,6 +4,8 @@ import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import PortfolioSection from "../../Components/PortfolioSection/PortfolioSection";
 import NavShowContext from "../../context/NavShowContext";
 import ServicesSection from "../../Components/ServicesSection/ServicesSection";
+import AboutSection from "../../Components/AboutSection/AboutSection";
+import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 
 import "./Home.css";
 
@@ -17,6 +19,8 @@ function Home() {
       <Hero />
       <PortfolioSection />
       <ServicesSection />
+      <AboutSection />
+      <Testimony />
     </div>
   );
 }

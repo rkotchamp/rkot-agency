@@ -38,6 +38,7 @@
   width: var(--medium-button-width);
   height: var(--medium-button-height);
   background-color: var(--focus-color);
+  border: none;
   border-radius: 30px;
   text-transform: uppercase;
   color: var(--second-primary-color);
