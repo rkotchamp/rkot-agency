@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "serviceName": "Web Designer",
+      "icon": "/public/images2/web.png"
+    },
+    {
+      "serviceName": "Logo & Brand Identity",
+      "icon": "/public/images2/logosAnd.png"
+    },
+    {
+      "serviceName": "Digital Services",
+      "icon": "/public/images2/digital.png"
+    }
+  ]
+}
