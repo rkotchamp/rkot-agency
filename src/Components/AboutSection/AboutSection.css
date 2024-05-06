@@ -1,5 +1,4 @@
 .aboutSection__container {
-  /* background-color: red; */
   display: flex;
   justify-content: center;
 
@@ -39,4 +38,30 @@
   max-height: 319px;
   font-family: var(--secondary-font-family);
   text-transform: capitalize;
+}
+
+@media only screen and (max-width: 600px) {
+  .aboutSection__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 90px 32px;
+  }
+
+  .about__firstSection h2 {
+    width: 331px;
+    max-width: 331px;
+  }
+
+  .about__secondSection p {
+    width: 364px;
+    height: 320px;
+    max-width: 364px;
+    max-height: 320px;
+  }
+  .about__firstSection {
+    margin-left: -30px;
+  }
 }
