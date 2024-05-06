@@ -78,7 +78,6 @@
   align-items: center;
   justify-content: center;
   gap: 27px;
-  /* background-color: red; */
 }
 
 .form .input {
@@ -259,4 +258,40 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact_container {
+    width: 90%;
+  }
+  .contactService h2 {
+    margin-left: 0px;
+  }
+
+  .chooseService .serviceContainer {
+    width: 117px;
+    height: 90px;
+  }
+
+  .chooseService .serviceContainer p {
+    font-size: 11px;
+  }
+
+  .indicator .circle {
+    width: 15px;
+    height: 15px;
+  }
+
+  .indicator .noCircle {
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--light-focus-color);
+  }
+
+  .indicator .straight_line {
+    width: 15px;
+    height: 3px;
+    border: none;
+    background-color: var(--focus-color);
+  }
 }

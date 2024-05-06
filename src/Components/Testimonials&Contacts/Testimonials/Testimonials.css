@@ -1,0 +1,43 @@
+.testimonials__container p {
+  color: var(--focus-color);
+  font-family: var(--secondary-font-family);
+  font-size: var(--small-subHeading-font-size);
+  text-transform: uppercase;
+  width: 217px;
+  height: 36px;
+}
+.testimonials__container .message {
+  width: 552px;
+  height: 216px;
+  max-width: 552px;
+  max-height: 216px;
+  color: var(--body-color);
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.testimonials__container h2 {
+  width: 370px;
+  height: 82px;
+  font-family: var(--secondary-font-family);
+  text-transform: capitalize;
+}
+
+.testimonials__container .testAuthor {
+  font-size: var(--small-subHeading-font-size);
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 600px) {
+  .testimonials__container h2 {
+    height: 80px;
+  }
+
+  .testimonials__container .message {
+    width: 450px;
+    height: 200px;
+    max-width: 450px;
+    max-height: 200px;
+  }
+}
