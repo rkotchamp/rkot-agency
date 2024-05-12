@@ -3,6 +3,8 @@
   height: 883px;
   border: 16px solid var(--light-focus-color);
   overflow: hidden;
+  margin-bottom: -30px;
+  background-color: #fff;
 }
 
 .contact_container .indicator_container {

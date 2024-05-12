@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { IoIosClose } from "react-icons/io";
-import logo from "../../assets/Images/rkot logo.png";
+import logo from "../../assets/Images/rkotlogo.png";
 
 import NavShowContext from "../../context/NavShowContext";
 import "./BurgerMenu.css";
