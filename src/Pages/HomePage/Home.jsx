@@ -6,6 +6,7 @@ import NavShowContext from "../../context/NavShowContext";
 import ServicesSection from "../../Components/ServicesSection/ServicesSection";
 import AboutSection from "../../Components/AboutSection/AboutSection";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
+import Footer from "../../Components/Footer/Footer";
 
 import "./Home.css";
 
@@ -21,6 +22,7 @@ function Home() {
       <ServicesSection />
       <AboutSection />
       <Testimony />
+      <Footer />
     </div>
   );
 }

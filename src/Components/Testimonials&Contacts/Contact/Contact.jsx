@@ -23,7 +23,6 @@ function Contact() {
     setActiveTab((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
-  console.log(activeTab);
   return (
     <div className="contact_container">
       {/* Carousel space */}

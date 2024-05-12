@@ -150,3 +150,49 @@ body.burger-menu-closed {
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .inline_navButtons .inline_cta_Button {
+    width: 120px;
+    height: 50px;
+    font-size: 12px;
+  }
+
+  .inline_navButtons .close_burger_Button {
+    width: 30px;
+    height: 30px;
+    border: none;
+  }
+
+  .burger_menu_container .first__division {
+    width: 50%;
+  }
+
+  .burger_menu_container .second__division {
+    width: 60%;
+  }
+
+  .burger_menu_container .second__division ul li {
+    font-size: 30px;
+  }
+
+  .first__division .about_topic {
+    width: 80%;
+  }
+
+  .burger_menu_container .first__division .menu__topic {
+    font-size: 15px;
+  }
+  .first__division .about_topic p {
+    font-size: 12px;
+  }
+  .first__division .contactPane {
+    width: 100%;
+    align-items: center;
+  }
+
+  .first__division .contactPane p {
+    font-size: 12px;
+    font-family: var(--secondary-font-family);
+  }
+}
