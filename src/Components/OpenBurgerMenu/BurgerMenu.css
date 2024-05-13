@@ -13,6 +13,7 @@ body.burger-menu-closed {
   position: absolute;
   top: 0;
   animation: mainContainerSlideIn 0.5s forwards;
+  z-index: 1;
 }
 
 .burger_menu_container .mainContainerOpen {
@@ -33,7 +34,6 @@ body.burger-menu-closed {
 .first__division .about_topic {
   width: 50%;
   animation: textSlideInUp 1s ease-in;
-  /* background-color: red; */
 }
 .first__division .about_topic p {
   font-family: var(--secondary-font-family);
@@ -44,8 +44,6 @@ body.burger-menu-closed {
 .first__division .contactPane {
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
-  /* align-items: self-start; */
   width: 50%;
   animation: textSlideInUp 1s ease-in;
 }
