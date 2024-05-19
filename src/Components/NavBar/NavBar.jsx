@@ -3,15 +3,22 @@ import logo from "../../assets/Images/rkot official-01 1.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import BurgerMenu from "../OpenBurgerMenu/BurgerMenu";
 import NavShowContext from "../../context/NavShowContext";
+import { useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
 function NavBar() {
   const { setShowNav } = useContext(NavShowContext);
   const { setHideNav } = useContext(NavShowContext);
 
+  const navigate = useNavigate();
+
   const showNavClick = () => {
     setShowNav((prev) => true);
     setHideNav((prev) => false);
+  };
+
+  const handleNavigate = (path) => {
+    return () => navigate(path);
   };
 
   return (
@@ -19,8 +26,8 @@ function NavBar() {
       <img src={logo} alt="rkot creative solutions logo" />
       <nav>
         <ul className="navLinks_container">
-          <li>Home</li>
-          <li>Our Works</li>
+          <li onClick={handleNavigate("/")}>Home</li>
+          <li onClick={handleNavigate("/portfolio")}>Our Works</li>
           <li>Our Services</li>
           <li>About Us</li>
         </ul>

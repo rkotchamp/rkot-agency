@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { IoIosClose } from "react-icons/io";
 import logo from "../../assets/Images/rkotlogo.png";
-
+import { useNavigate } from "react-router-dom";
 import NavShowContext from "../../context/NavShowContext";
 import "./BurgerMenu.css";
 import { DiStylus } from "react-icons/di";
@@ -9,6 +9,12 @@ import { DiStylus } from "react-icons/di";
 function BurgerMenu() {
   const { showNav, setShowNav } = useContext(NavShowContext);
   const { hideNav, setHideNav } = useContext(NavShowContext);
+
+  const navigate = useNavigate();
+
+  const handleUseNav = (path) => {
+    return () => navigate(path);
+  };
 
   useEffect(() => {
     // Using this condition to
@@ -53,8 +59,8 @@ function BurgerMenu() {
       </div>
       <div className="second__division">
         <ul>
-          <li>HOME</li>
-          <li>OUR WORKS</li>
+          <li onClick={handleUseNav("/")}>HOME</li>
+          <li onClick={handleUseNav("/portfolio")}>OUR WORKS</li>
           <li>OUR SERVICES</li>
           <li>ABOUT US</li>
           <li>GET IN TOUCH</li>
