@@ -1,0 +1,37 @@
+.service__headers {
+  width: 70%;
+  background-color: red;
+}
+
+.styleContainer {
+  background-color: blue;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service__headers .headersPane {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.headersPane p {
+  width: 590px;
+  height: 36px;
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+  color: var(--focus-color);
+  font-weight: 500;
+  font-size: var(--small-subHeading-font-size);
+}
+
+.service__headers .headersPane h2 {
+  width: 540px;
+  height: 94px;
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+  font-weight: 700;
+}

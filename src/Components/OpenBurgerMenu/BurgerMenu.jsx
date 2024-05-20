@@ -4,7 +4,6 @@ import logo from "../../assets/Images/rkotlogo.png";
 import { useNavigate } from "react-router-dom";
 import NavShowContext from "../../context/NavShowContext";
 import "./BurgerMenu.css";
-import { DiStylus } from "react-icons/di";
 
 function BurgerMenu() {
   const { showNav, setShowNav } = useContext(NavShowContext);
