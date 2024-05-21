@@ -1,10 +1,9 @@
 .service__headers {
   width: 70%;
-  background-color: red;
+  padding-top: 126px;
 }
 
 .styleContainer {
-  background-color: blue;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -34,4 +33,57 @@
   font-family: var(--secondary-font-family);
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.service_image_and_icons {
+  width: 100%;
+  height: auto;
+}
+
+.service_image_and_icons .image_container {
+  width: 100%;
+  height: auto;
+  margin-bottom: 105px;
+}
+
+.service_image_and_icons .image_container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.service_image_and_icons .icons__space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 114px;
+}
+
+.agencyIcons {
+  width: 320px;
+  height: 289.964px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.agencyIcons h4 {
+  width: 249px;
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--secondary-font-family);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.agencyIcons p {
+  width: 200px;
+  height: 67px;
+  font-size: var(--small-subHeading-font-size);
+  text-transform: capitalize;
+  text-align: center;
 }
