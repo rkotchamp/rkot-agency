@@ -1,14 +1,26 @@
+import { useContext } from "react";
+import NavShowContext from "../../context/NavShowContext";
 import NavBar from "../../Components/NavBar/NavBar";
 import agencyImage from "../../assets/Images/serveimage.png";
 import createIcon from "../../assets/Images/createPNG.png";
 import marketing from "../../assets/Images/marketingPng.png";
 import maintenance from "../../assets/Images/maintenancePng.png";
+import serviceImageSec from "../../assets/Images/serviceVector.png";
+import PortfolioSection from "../../Components/PortfolioSection/PortfolioSection";
+import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
+import Footer from "../../Components/Footer/Footer";
+import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import "./Service.css";
 
 function Service() {
+  const { hideNav } = useContext(NavShowContext);
+
+  const { showNav } = useContext(NavShowContext);
+
   return (
     <div className="service__container">
-      <NavBar />
+      {showNav && <BurgerMenu />}
+      {hideNav && <NavBar />}
       <div className="styleContainer">
         <div className="service__headers">
           <div className="headersPane">
@@ -49,6 +61,47 @@ function Service() {
           </div>
         </div>
       </div>
+
+      <div className="secondServiceSection">
+        <div className="second__service__image__container">
+          <img
+            src={serviceImageSec}
+            alt="Graphic design design and web development vector image"
+          />
+        </div>
+
+        <div className="serviceTextSpace ">
+          <div className="web style__Text__Content__Services">
+            <p className="styleHeaders">web design / development</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Porttitor neque gravida
+              aliquet faucibus quisque. Id nibh at amet accumsan. Eu amet
+              elementum malesuada porttitor a sed id libero dui. Pellentesque
+              ornare ullamcorper urna amet tellus tellus ante sed. Mattis a sit
+              vel egestas ullamcorper morbi quisque. Dui pretium pretium
+              habitant turpis ipsum aliquam scelerisque nunc nibh. Pretium
+              molestie nulla amet aliquet. Posuere orci nisl ac platea ac tellus
+              egestas facilisi. Duis nunc urna cras euismod in risus.
+            </p>
+          </div>
+          <div className="logo_identity style__Text__Content__Services">
+            <p className="styleHeaders">Logo & brand identity</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur. Porttitor neque gravida
+              aliquet faucibus quisque. Id nibh at amet accumsan. Eu amet
+              elementum malesuada porttitor a sed id libero dui. Pellentesque
+              ornare ullamcorper urna amet tellus tellus ante sed. Mattis a sit
+              vel egestas ullamcorper morbi quisque. Dui pretium pretium
+              habitant turpis ipsum aliquam scelerisque nunc nibh. Pretium
+              molestie nulla amet aliquet. Posuere orci nisl ac platea ac tellus
+              egestas facilisi. Duis nunc urna cras euismod in risus.
+            </p>
+          </div>
+        </div>
+      </div>
+      <PortfolioSection />
+      <Testimony />
+      <Footer />
     </div>
   );
 }

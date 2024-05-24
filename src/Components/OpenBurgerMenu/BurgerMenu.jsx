@@ -6,8 +6,9 @@ import NavShowContext from "../../context/NavShowContext";
 import "./BurgerMenu.css";
 
 function BurgerMenu() {
-  const { showNav, setShowNav } = useContext(NavShowContext);
-  const { hideNav, setHideNav } = useContext(NavShowContext);
+  const { showNav, setShowNav, hideNav, setHideNav } =
+    useContext(NavShowContext);
+  // const { hideNav, setHideNav } = useContext(NavShowContext);
 
   const navigate = useNavigate();
 

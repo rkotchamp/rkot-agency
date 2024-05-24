@@ -5,6 +5,7 @@ import Home from "./Pages/HomePage/Home";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Service from "./Pages/ServicePage/Service";
 import About from "./Pages/AboutPage/About";
+import NavBar from "./Components/NavBar/NavBar";
 // import BurgerMenu from "../OpenBurgerMenu/BurgerMenu";
 
 import "./App.css";
@@ -12,12 +13,12 @@ import BurgerMenu from "../src/Components/OpenBurgerMenu/BurgerMenu";
 
 function App() {
   // const { showNav } = useContext(NavShowContext);
-  // const { hideNav } = use Context(NavShowContext);
+  // const { hideNav } = useContext(NavShowContext);
   return (
     <>
-      {/* {hideNav && <NavBar />} */}
+      {/* {hideNav && <NavBar />}
 
-      {/* {showNav && <BurgerMenu />} */}
+      {showNav && <BurgerMenu />} */}
 
       <Routes>
         <Route path="/" element={<Home />} />
