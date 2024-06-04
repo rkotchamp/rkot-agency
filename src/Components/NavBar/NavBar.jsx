@@ -28,8 +28,8 @@ function NavBar() {
         <ul className="navLinks_container">
           <li onClick={handleNavigate("/")}>Home</li>
           <li onClick={handleNavigate("/portfolio")}>Our Works</li>
-          <li>Our Services</li>
-          <li>About Us</li>
+          <li onClick={handleNavigate("/services")}>Our Services</li>
+          <li onClick={handleNavigate("/about-us")}>About Us</li>
         </ul>
         <div className="navButtons">
           <button className="cta_Button">GET IN TOUCH</button>

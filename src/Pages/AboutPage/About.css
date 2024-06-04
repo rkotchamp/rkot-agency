@@ -1,0 +1,136 @@
+.about__container {
+  padding-top: 26px;
+}
+
+.about__header__image {
+  width: 70%;
+  padding-top: 126px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.styleElements {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__headers p {
+  width: 590px;
+  height: 36px;
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+  color: var(--focus-color);
+  font-weight: 500;
+}
+
+.about__headers h2 {
+  width: 540px;
+  height: 94px;
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.about__headers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 195px;
+}
+.about__image__container {
+  width: 100%;
+}
+
+.about__image__container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.aboutSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 116px;
+  /* background-color: red; */
+}
+
+.aboutSection .longText p {
+  width: 623px;
+  height: 309px;
+}
+.about__text p {
+  width: 590px;
+  height: 36px;
+  color: var(--focus-color);
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+}
+
+.about__text h2 {
+  width: 450px;
+  height: 94px;
+  font-family: var(--secondary-font-family);
+  font-size: var(--mid-text-font-size);
+}
+
+.theTeam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 208px;
+}
+
+.membersAndDetails {
+  display: flex;
+  justify-content: center;
+  gap: 128px;
+}
+
+.memberContainer .memberImageContainer {
+  width: 522px;
+  height: 352px;
+}
+.memberImageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.head {
+  /* background-color: red; */
+  width: 50%;
+}
+
+.head h2 {
+  width: 279px;
+  height: 94px;
+  font-family: var(--secondary-font-family);
+  color: var(--body-color);
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.memberContainer p {
+  color: var(--focus-color);
+  text-transform: uppercase;
+  font-family: var(--secondary-font-family);
+  /* font-size: 18px; */
+}
+.memberContainer .membersName {
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--body-color);
+  font-size: 20px;
+}
+
+.memberContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

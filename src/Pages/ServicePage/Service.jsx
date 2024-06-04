@@ -3,7 +3,7 @@ import NavShowContext from "../../context/NavShowContext";
 import NavBar from "../../Components/NavBar/NavBar";
 import agencyImage from "../../assets/Images/serveimage.png";
 import createIcon from "../../assets/Images/createPNG.png";
-import marketing from "../../assets/Images/marketingPng.png";
+import marketing from "../../assets/Images/market.png";
 import maintenance from "../../assets/Images/maintenancePng.png";
 import serviceImageSec from "../../assets/Images/serviceVector.png";
 import PortfolioSection from "../../Components/PortfolioSection/PortfolioSection";
