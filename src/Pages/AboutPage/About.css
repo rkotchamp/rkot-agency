@@ -63,6 +63,7 @@
 .aboutSection .longText p {
   width: 623px;
   height: 309px;
+  font-family: var(--secondary-font-family);
 }
 .about__text p {
   width: 590px;
@@ -133,4 +134,59 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .about__header__image {
+    width: 80%;
+    padding-top: 120px;
+  }
+
+  .about__headers {
+    padding-left: 0px;
+  }
+  .about__headers h2 {
+    width: 340px;
+    height: 64px;
+    font-size: var(--small-subHeading-font-size);
+  }
+  .aboutSection {
+    flex-direction: column;
+    align-items: center;
+
+    padding: 100px 50px 100px 50px;
+  }
+  .about__text h2 {
+    width: 250px;
+    height: 94px;
+    font-family: var(--secondary-font-family);
+    font-size: var(--small-subHeading-font-size);
+    text-transform: capitalize;
+  }
+
+  .about__text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .about__text p {
+    width: 120px;
+    height: 50px;
+  }
+
+  .aboutSection .longText p {
+    width: 100%;
+    height: auto;
+    font-family: var(--secondary-font-family);
+    text-align: justify;
+  }
+
+  .membersAndDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 128px;
+  }
 }
