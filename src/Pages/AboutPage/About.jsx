@@ -7,9 +7,8 @@ import firstImage from "../../assets/Images/firstMember.png";
 import secondMember from "../../assets/Images/secondMember.png";
 import ServicesSection from "../../Components/ServicesSection/ServicesSection";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
-
-import "./About.css";
 import Footer from "../../Components/Footer/Footer";
+import "./About.css";
 
 function About() {
   const { hideNav } = useContext(NavShowContext);
