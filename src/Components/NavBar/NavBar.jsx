@@ -29,24 +29,24 @@ function NavBar() {
       <img src={logo} alt="rkot creative solutions logo" />
       <nav>
         <ul className="navLinks_container">
-          <Link to="/" className={selectedNav === "/" ? "active" : ""}>
+          <Link to="/" className={selectedNav === "/" ? "active" : "alink"}>
             <li>Home</li>
           </Link>
           <Link
             to="/portfolio"
-            className={selectedNav === "/portfolio" ? "active" : ""}
+            className={selectedNav === "/portfolio" ? "active" : "alink"}
           >
             <li>Our Works</li>
           </Link>
           <Link
             to="/services"
-            className={selectedNav === "/services" ? "active" : ""}
+            className={selectedNav === "/services" ? "active" : "alink"}
           >
             <li>Our Services</li>
           </Link>
           <Link
             to="/about-us"
-            className={selectedNav === "/about-us" ? "active" : ""}
+            className={selectedNav === "/about-us" ? "active" : "alink"}
           >
             <li>About Us</li>
           </Link>

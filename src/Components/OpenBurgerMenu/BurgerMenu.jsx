@@ -3,6 +3,7 @@ import { IoIosClose } from "react-icons/io";
 import logo from "../../assets/Images/rkotlogo.png";
 import { useNavigate } from "react-router-dom";
 import NavShowContext from "../../context/NavShowContext";
+import { Link } from "react-router-dom";
 import "./BurgerMenu.css";
 
 function BurgerMenu() {
@@ -59,10 +60,18 @@ function BurgerMenu() {
       </div>
       <div className="second__division">
         <ul>
-          <li onClick={handleUseNav("/")}>HOME</li>
-          <li onClick={handleUseNav("/portfolio")}>OUR WORKS</li>
-          <li>OUR SERVICES</li>
-          <li>ABOUT US</li>
+          <Link to="/">
+            <li>HOME</li>
+          </Link>
+          <Link to="/portfolio">
+            <li>OUR WORKS</li>
+          </Link>
+          <Link to="/services">
+            <li>OUR SERVICES</li>
+          </Link>
+          <Link to="/about-us">
+            <li>ABOUT US</li>
+          </Link>
           <li>GET IN TOUCH</li>
         </ul>
       </div>

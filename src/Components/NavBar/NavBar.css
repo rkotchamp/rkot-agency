@@ -25,6 +25,10 @@ nav .navLinks_container li {
   font-size: var(--small-subHeading-font-size);
   /* font-weight: 6; */
 }
+.navLinks_container .alink {
+  color: var(--body-color);
+  text-decoration: none;
+}
 
 nav .navButtons {
   display: flex;
@@ -57,6 +61,11 @@ nav .navButtons {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.active {
+  color: var(--focus-color);
+  text-decoration: none;
 }
 
 /* media queries */

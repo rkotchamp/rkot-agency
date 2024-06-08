@@ -72,6 +72,10 @@ body.burger-menu-closed {
   /* animation: mainContainerSlideIn 1s forwards; */
 }
 
+.second__division a {
+  text-decoration: none;
+}
+
 .burger_menu_container .second__division ul li {
   list-style: none;
   font-size: var(--hero-text-font-size);
