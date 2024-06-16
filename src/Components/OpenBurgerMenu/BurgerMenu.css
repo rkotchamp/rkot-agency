@@ -7,13 +7,17 @@ body.burger-menu-closed {
 }
 
 .burger_menu_container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   display: flex;
   position: absolute;
   top: 0;
   animation: mainContainerSlideIn 0.5s forwards;
-  z-index: 1;
+  z-index: 100;
+  overflow: hidden;
 }
 
 .burger_menu_container .mainContainerOpen {
@@ -128,7 +132,6 @@ body.burger-menu-closed {
   width: 100%;
   padding: 30px;
   animation: textSlideInUp 0.8s ease-in;
-  /* background-color: red; */
 }
 
 @keyframes mainContainerSlideIn {
@@ -153,6 +156,57 @@ body.burger-menu-closed {
   }
 }
 
+/* Ipad screens  */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .inline_navButtons .inline_cta_Button {
+    width: 120px;
+    height: 50px;
+    font-size: 12px;
+  }
+  .burger_menu_container .first__division {
+    width: 40%;
+  }
+
+  .burger_menu_container .second__division {
+    width: 60%;
+  }
+
+  .inline_navButtons .close_burger_Button {
+    width: 60px;
+    height: 60px;
+    border: none;
+  }
+
+  .burger_menu_container .second__division ul li {
+    font-size: 40px;
+  }
+
+  .first__division .about_topic {
+    width: 80%;
+  }
+
+  .burger_menu_container .first__division .menu__topic {
+    font-size: 20px;
+  }
+  .first__division .about_topic p {
+    font-size: 15px;
+  }
+  .first__division .contactPane {
+    width: 80%;
+    align-items: left;
+  }
+
+  .first__division .contactPane p {
+    font-size: 15px;
+    font-family: var(--secondary-font-family);
+    cursor: pointer;
+  }
+  .first__division .contactPane p:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Mobile screens  */
 @media only screen and (max-width: 600px) {
   .inline_navButtons .inline_cta_Button {
     width: 120px;
@@ -196,5 +250,9 @@ body.burger-menu-closed {
   .first__division .contactPane p {
     font-size: 12px;
     font-family: var(--secondary-font-family);
+    cursor: pointer;
+  }
+  .first__division .contactPane p:hover {
+    text-decoration: underline;
   }
 }

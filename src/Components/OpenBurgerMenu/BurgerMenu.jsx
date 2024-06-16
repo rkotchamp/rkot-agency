@@ -7,15 +7,14 @@ import { Link } from "react-router-dom";
 import "./BurgerMenu.css";
 
 function BurgerMenu() {
-  const { showNav, setShowNav, hideNav, setHideNav } =
-    useContext(NavShowContext);
+  const { showNav, setShowNav, setHideNav } = useContext(NavShowContext);
   // const { hideNav, setHideNav } = useContext(NavShowContext);
 
   const navigate = useNavigate();
 
-  const handleUseNav = (path) => {
-    return () => navigate(path);
-  };
+  // const handleUseNav = (path) => {
+  //   return () => navigate(path);
+  // };
 
   useEffect(() => {
     // Using this condition to
@@ -36,7 +35,7 @@ function BurgerMenu() {
   };
 
   return (
-    <div className="burger_menu_container">
+    <div className={`burger_menu_container ${showNav ? "hidden" : ""}`}>
       <div className="inline_nav">
         <img src={logo} alt="rkot agency logo" />
         <div className="inline_navButtons">

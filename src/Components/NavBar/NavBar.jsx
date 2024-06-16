@@ -23,7 +23,6 @@ function NavBar() {
     setSelectedNav(location.pathname);
   }, [location]);
 
-  console.log(selectedNav);
   return (
     <div className="nav_container">
       <img src={logo} alt="rkot creative solutions logo" />

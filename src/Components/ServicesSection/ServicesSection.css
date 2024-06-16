@@ -78,6 +78,53 @@
   max-width: 304px;
 }
 
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .service-container {
+    width: 100%;
+    height: 804px;
+    padding: 20px;
+  }
+
+  .service-container .firstPane {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .service-header h2 {
+    font-size: var(--body-font-size);
+  }
+
+  .firstPane .notes p {
+    font-family: var(--secondary-font-family);
+    font-size: 15px;
+    color: var(--primary-color);
+    max-width: 413px;
+  }
+
+  .secondPane {
+    gap: 11px;
+    margin-left: 0px;
+  }
+  .secondPane .firstWeb {
+    width: 302px;
+    height: 142px;
+  }
+
+  .secondPane .firstWeb .headingsIn {
+    font-size: 15px;
+  }
+
+  .secondPane .firstWeb .text {
+    color: var(--primary-color);
+    font-size: 15px;
+    font-family: var(--secondary-font-family);
+    text-transform: capitalize;
+    max-width: 304px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .service-container {
     height: auto;

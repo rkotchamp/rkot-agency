@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavShowContext from "./context/NavShowContext";
 import Home from "./Pages/HomePage/Home";
@@ -12,8 +12,19 @@ import "./App.css";
 import BurgerMenu from "../src/Components/OpenBurgerMenu/BurgerMenu";
 
 function App() {
-  // const { showNav } = useContext(NavShowContext);
+  const { showNav } = useContext(NavShowContext);
   // const { hideNav } = useContext(NavShowContext);
+
+  useEffect(() => {
+    if (showNav) {
+      document.body.classList.add("burger-menu-open");
+      document.body.classList.remove("burger-menu-closed");
+    } else {
+      document.body.classList.add("burger-menu-closed");
+
+      document.body.classList.remove("burger-menu-open");
+    }
+  }, [showNav]);
   return (
     <>
       {/* {hideNav && <NavBar />}

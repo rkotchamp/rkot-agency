@@ -45,6 +45,22 @@
   margin: 100px 0;
 }
 
+/* ipad devices */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .portfolio-grid {
+    display: grid;
+    gap: var(--small-vert-spacing);
+    grid-template-columns: repeat(2, 266px);
+    /* place-content: center; */
+  }
+
+  .portfolio-header {
+    margin-left: -45px;
+    padding-top: 100px;
+  }
+}
+
+/* Mobile devices */
 @media only screen and (max-width: 600px) {
   .portfolio-grid {
     display: grid;

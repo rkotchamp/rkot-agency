@@ -8,7 +8,7 @@ function ServicesSection() {
           <p>Our SERVICES</p>
           <h2>
             We pride ourselves to be customer focused, quality driven design
-            agency that can supportall of your design needs
+            agency that can support all of your design needs
           </h2>
         </div>
         <div className="notes">
@@ -23,7 +23,7 @@ function ServicesSection() {
           <p className="headingsIn">#Web development</p>
           <p className="text">
             We pride ourselves to be customer focused, quality driven design
-            agency that can supportall of your design needs
+            agency that can support all of your design needs
           </p>
         </div>
         <div className="firstWeb">

@@ -7,8 +7,7 @@ import NavShowContext from "../../context/NavShowContext";
 import "./Hero.css";
 
 function Hero() {
-  const { hideNav } = useContext(NavShowContext);
-  const { showNav } = useContext(NavShowContext);
+  const { hideNav, showNav } = useContext(NavShowContext);
 
   return (
     <div className="hero_container">

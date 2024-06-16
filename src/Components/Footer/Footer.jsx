@@ -28,8 +28,14 @@ function Footer() {
             Call us to know how we can transform your online prescence with our
             amazing creativity
           </p>
-          <p>Email: rkotcreativesolutions@gmail.com</p>
-          <p>+40 756 432 854</p>
+          <p>
+            <a href="mailto:rkotcreativesolutions@gmail.com">
+              Email: rkotcreativesolutions@gmail.com
+            </a>
+          </p>
+          <p>
+            <a href="tel:+40 756 432 854">+40 756 432 854</a>
+          </p>
         </div>
       </div>
     </div>

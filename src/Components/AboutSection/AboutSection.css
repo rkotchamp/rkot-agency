@@ -40,6 +40,17 @@
   text-transform: capitalize;
 }
 
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .aboutSection__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 90px 32px;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .aboutSection__container {
     display: flex;

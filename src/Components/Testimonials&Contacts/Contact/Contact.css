@@ -262,6 +262,12 @@
   font-weight: 500;
 }
 
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .contact_container {
+    width: 80%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .contact_container {
     width: 90%;
