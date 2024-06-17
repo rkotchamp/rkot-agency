@@ -10,7 +10,7 @@ function BurgerMenu() {
   const { showNav, setShowNav, setHideNav } = useContext(NavShowContext);
   // const { hideNav, setHideNav } = useContext(NavShowContext);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // const handleUseNav = (path) => {
   //   return () => navigate(path);
@@ -39,7 +39,9 @@ function BurgerMenu() {
       <div className="inline_nav">
         <img src={logo} alt="rkot agency logo" />
         <div className="inline_navButtons">
-          <button className="inline_cta_Button">GET IN TOUCH</button>
+          <button className="inline_cta_Button" id="contact">
+            GET IN TOUCH
+          </button>
           <button className="close_burger_Button" onClick={hideNavClick}>
             <IoIosClose />
           </button>
@@ -53,22 +55,31 @@ function BurgerMenu() {
           </p>
         </div>
         <div className="contactPane">
-          <p>+40756432854</p>
-          <p>rkotcreativesolutions@gmail.com</p>
+          <p>
+            <a href="tel:+40756432854">+40756432854</a>
+          </p>
+          <p>
+            <a
+              href="mailto:rkotcreativesolutions@gmail.com"
+              onClick={hideNavClick}
+            >
+              rkotcreativesolutions@gmail.com
+            </a>
+          </p>
         </div>
       </div>
       <div className="second__division">
         <ul>
-          <Link to="/">
+          <Link to="/" onClick={hideNavClick}>
             <li>HOME</li>
           </Link>
-          <Link to="/portfolio">
+          <Link to="/portfolio" onClick={hideNavClick}>
             <li>OUR WORKS</li>
           </Link>
-          <Link to="/services">
+          <Link to="/services" onClick={hideNavClick}>
             <li>OUR SERVICES</li>
           </Link>
-          <Link to="/about-us">
+          <Link to="/about-us" onClick={hideNavClick}>
             <li>ABOUT US</li>
           </Link>
           <li>GET IN TOUCH</li>

@@ -25,6 +25,7 @@ function App() {
       document.body.classList.remove("burger-menu-open");
     }
   }, [showNav]);
+
   return (
     <>
       {/* {hideNav && <NavBar />}
