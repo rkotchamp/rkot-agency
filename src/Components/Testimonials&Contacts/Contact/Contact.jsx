@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import prevBtn from "../../../assets/Images/prev.png";
 import nextBtn from "../../../assets/Images/next.png";
 import { services } from "../../../serviceData.json";
+import ScrollToContactContext from "../../../context/ScrollContactContext";
 import "./Contact.css";
 
 const contactDetails = [
@@ -12,6 +13,7 @@ const contactDetails = [
 
 function Contact() {
   const [activeTab, setActiveTab] = useState(0);
+  const { contactRef } = useContext(ScrollToContactContext);
 
   const handleNextCarousel = () => {
     setActiveTab((prev) =>
@@ -24,7 +26,7 @@ function Contact() {
   };
 
   return (
-    <div className="contact_container">
+    <div className="contact_container" ref={contactRef}>
       {/* Carousel space */}
       <div className="indicator_container">
         {contactDetails.map((item, i) => {

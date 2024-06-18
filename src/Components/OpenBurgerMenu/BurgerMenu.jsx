@@ -4,10 +4,13 @@ import logo from "../../assets/Images/rkotlogo.png";
 import { useNavigate } from "react-router-dom";
 import NavShowContext from "../../context/NavShowContext";
 import { Link } from "react-router-dom";
+import ScrollToContactContext from "../../context/ScrollContactContext";
 import "./BurgerMenu.css";
 
 function BurgerMenu() {
   const { showNav, setShowNav, setHideNav } = useContext(NavShowContext);
+  const { scrollToContact } = useContext(ScrollToContactContext);
+
   // const { hideNav, setHideNav } = useContext(NavShowContext);
 
   // const navigate = useNavigate();
@@ -39,7 +42,13 @@ function BurgerMenu() {
       <div className="inline_nav">
         <img src={logo} alt="rkot agency logo" />
         <div className="inline_navButtons">
-          <button className="inline_cta_Button" id="contact">
+          <button
+            className="inline_cta_Button"
+            onClick={() => {
+              scrollToContact();
+              hideNavClick();
+            }}
+          >
             GET IN TOUCH
           </button>
           <button className="close_burger_Button" onClick={hideNavClick}>
@@ -82,7 +91,14 @@ function BurgerMenu() {
           <Link to="/about-us" onClick={hideNavClick}>
             <li>ABOUT US</li>
           </Link>
-          <li>GET IN TOUCH</li>
+          <li
+            onClick={() => {
+              hideNavClick();
+              scrollToContact();
+            }}
+          >
+            GET IN TOUCH
+          </li>
         </ul>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavShowContext from "./context/NavShowContext";
 import Home from "./Pages/HomePage/Home";
@@ -13,6 +13,7 @@ import BurgerMenu from "../src/Components/OpenBurgerMenu/BurgerMenu";
 
 function App() {
   const { showNav } = useContext(NavShowContext);
+
   // const { hideNav } = useContext(NavShowContext);
 
   useEffect(() => {
