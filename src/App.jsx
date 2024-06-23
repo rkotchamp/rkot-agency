@@ -5,7 +5,7 @@ import Home from "./Pages/HomePage/Home";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Service from "./Pages/ServicePage/Service";
 import About from "./Pages/AboutPage/About";
-import NavBar from "./Components/NavBar/NavBar";
+import Blogs from "./Pages/Blogs/Blogs";
 // import BurgerMenu from "../OpenBurgerMenu/BurgerMenu";
 
 import "./App.css";
@@ -38,6 +38,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/services" element={<Service />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/blogs" element={<Blogs />} />
       </Routes>
     </>
   );

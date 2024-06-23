@@ -52,6 +52,12 @@ function NavBar() {
           >
             <li>About Us</li>
           </Link>
+          <Link
+            to="/blogs"
+            className={selectedNav === "/blogs" ? "active" : "alink"}
+          >
+            <li>Blogs</li>
+          </Link>
         </ul>
         <div className="navButtons">
           <button className="cta_Button" onClick={scrollToContact}>

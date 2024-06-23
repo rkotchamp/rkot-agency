@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import prevBtn from "../../../assets/Images/prev.png";
 import nextBtn from "../../../assets/Images/next.png";
 import { services } from "../../../serviceData.json";
@@ -14,6 +14,27 @@ const contactDetails = [
 function Contact() {
   const [activeTab, setActiveTab] = useState(0);
   const { contactRef } = useContext(ScrollToContactContext);
+  const formRef = useRef(null);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    companyName: "",
+    phoneNumber: "",
+    email: "",
+    budget: "",
+    services: [],
+    projectDescription: "",
+    aboutTheProject: "",
+    kickOffDate: "",
+  });
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleNextCarousel = () => {
     setActiveTab((prev) =>
@@ -25,6 +46,19 @@ function Contact() {
     setActiveTab((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
+  const handleFormSubmit = (e) => {
+    // e, preventDefault();
+    const formData = new FormData(formRef.current);
+
+    const data = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      companyName: formData.get("companyName"),
+    };
+  };
+
+  console.log(formData);
+  console.log(contactDetails.length);
   return (
     <div className="contact_container" ref={contactRef}>
       {/* Carousel space */}
@@ -66,15 +100,53 @@ function Contact() {
       <div className="formSpace">
         {activeTab === 0 && (
           <form action="" className="form">
-            <input type="text" className="input" placeholder="FISRT NAME" />
-            <input type="text" className="input" placeholder="LAST NAME" />
-            <input type="text" className="input" placeholder="COMPANY NAME" />
-            <input type="text" className="input" placeholder="PHONE NUMBER" />
-            <input type="email" className="input" placeholder="EMAIL" />
+            <input
+              type="text"
+              className="input"
+              placeholder="FISRT NAME"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleFormChange}
+            />
+            <input
+              type="text"
+              className="input"
+              placeholder="LAST NAME"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleFormChange}
+            />
+            <input
+              type="text"
+              className="input"
+              placeholder="COMPANY NAME"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleFormChange}
+            />
+            <input
+              type="text"
+              className="input"
+              placeholder="PHONE NUMBER"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleFormChange}
+            />
+            <input
+              type="email"
+              className="input"
+              placeholder="EMAIL"
+              name="email"
+              value={formData.email}
+              onChange={handleFormChange}
+            />
             <input
               type="text"
               className="input"
               placeholder="YOUR BUDGET RANGE"
+              name="budget"
+              value={formData.budget}
+              onChange={handleFormChange}
             />
           </form>
         )}
@@ -89,11 +161,20 @@ function Contact() {
                   <div className="serviceContainer" key={indx}>
                     <img src={service.icon} alt={service.serviceName} />
                     <p>{service.serviceName}</p>
+                    <input
+                      type="checkbox"
+                      name={service.serviceName}
+                      value=""
+                    />
                   </div>
                 );
               })}
             </div>
-            <textarea placeholder="Any More Description?"></textarea>
+            <textarea
+              placeholder="Any More Description?"
+              value=""
+              name="projectDescription"
+            ></textarea>
           </div>
         )}
         {activeTab === 2 && (
@@ -101,13 +182,13 @@ function Contact() {
             <h2>Lets talk about your needs</h2>
             <div className="tellMore textSpace">
               <label htmlFor="">Please tell us more about your project</label>
-              <textarea name="needs"></textarea>
+              <textarea name="aboutProject" value=""></textarea>
             </div>
             <div className="deadLine textSpace">
               <label htmlFor="">
                 When would you like your project to start?
               </label>
-              <textarea name="deadline" className="deadLineText"></textarea>
+              <textarea name="kickOffDate" className="deadLineText"></textarea>
             </div>
           </div>
         )}
@@ -117,10 +198,17 @@ function Contact() {
           <button className="prevBtn" onClick={handlePreviousCarousel}>
             <img src={prevBtn} alt="previous icon" />
           </button>
-          <button className="nextBtn" onClick={handleNextCarousel}>
-            NEXT
-            <img src={nextBtn} alt="Next button icon" />
-          </button>
+          {activeTab === contactDetails.length - 1 ? (
+            <button className="nextBtn" onClick={handleFormSubmit}>
+              SUBMIT
+              <img src={nextBtn} alt="Next button icon" />
+            </button>
+          ) : (
+            <button className="nextBtn" onClick={handleNextCarousel}>
+              NEXT
+              <img src={nextBtn} alt="Next button icon" />
+            </button>
+          )}
         </div>
       </div>
     </div>

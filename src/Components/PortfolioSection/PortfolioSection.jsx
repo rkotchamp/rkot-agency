@@ -6,7 +6,7 @@ function PortfolioSection() {
     <div className="portfolio-container">
       <div className="portfolio-header">
         <p>Our Portfolio</p>
-        <h2>People dress to impress. we design for business success </h2>
+        <h2>From boardroom to browser, we tailor success with design.</h2>
       </div>
       <div className="portfolio-grid">
         <PortFolioGrid />
