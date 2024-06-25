@@ -22,10 +22,11 @@ function Contact() {
     phoneNumber: "",
     email: "",
     budget: "",
+    country: "",
     services: [],
     projectDescription: "",
-    aboutTheProject: "",
-    kickOffDate: "",
+    aboutProject: "",
+    kickDate: "",
   });
 
   const handleFormChange = (e) => {
@@ -34,6 +35,16 @@ function Contact() {
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleSelectedService = (e) => {
+    const { value, checked } = e.target;
+    setFormData((prevData) => {
+      const services = checked
+        ? [...prevData.services, value]
+        : prevData.services.filter((service) => service !== value);
+      return { ...prevData, services };
+    });
   };
 
   const handleNextCarousel = () => {
@@ -48,17 +59,16 @@ function Contact() {
 
   const handleFormSubmit = (e) => {
     // e, preventDefault();
-    const formData = new FormData(formRef.current);
-
-    const data = {
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      companyName: formData.get("companyName"),
-    };
+    e.preventDefault();
+    if (formRef.current) {
+      const finalFormData = new FormData(formRef.current);
+      console.log(Object.fromEntries(finalFormData.entries()));
+    } else {
+      console.error("Form reference is null");
+    }
   };
 
-  console.log(formData);
-  console.log(contactDetails.length);
+  // checked={formData.services.includes(service.serviceName)}
   return (
     <div className="contact_container" ref={contactRef}>
       {/* Carousel space */}
@@ -97,120 +107,144 @@ function Contact() {
         </div>
       </div>
       {/* user form space */}
-      <div className="formSpace">
-        {activeTab === 0 && (
-          <form action="" className="form">
-            <input
-              type="text"
-              className="input"
-              placeholder="FISRT NAME"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleFormChange}
-            />
-            <input
-              type="text"
-              className="input"
-              placeholder="LAST NAME"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleFormChange}
-            />
-            <input
-              type="text"
-              className="input"
-              placeholder="COMPANY NAME"
-              name="companyName"
-              value={formData.companyName}
-              onChange={handleFormChange}
-            />
-            <input
-              type="text"
-              className="input"
-              placeholder="PHONE NUMBER"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleFormChange}
-            />
-            <input
-              type="email"
-              className="input"
-              placeholder="EMAIL"
-              name="email"
-              value={formData.email}
-              onChange={handleFormChange}
-            />
-            <input
-              type="text"
-              className="input"
-              placeholder="YOUR BUDGET RANGE"
-              name="budget"
-              value={formData.budget}
-              onChange={handleFormChange}
-            />
-          </form>
-        )}
+      <form ref={formRef} onSubmit={handleFormSubmit}>
+        <div className="formSpace">
+          {activeTab === 0 && (
+            <form className="form">
+              <input
+                type="text"
+                className="input"
+                placeholder="FISRT NAME"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleFormChange}
+              />
+              <input
+                type="text"
+                className="input"
+                placeholder="LAST NAME"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleFormChange}
+              />
+              <input
+                type="text"
+                className="input"
+                placeholder="COMPANY NAME"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleFormChange}
+              />
+              <input
+                type="text"
+                className="input"
+                placeholder="COUNTRY"
+                name="country"
+                value={formData.country}
+                onChange={handleFormChange}
+              />
+              <input
+                type="text"
+                className="input"
+                placeholder="PHONE NUMBER"
+                name="phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleFormChange}
+              />
+              <input
+                type="email"
+                className="input"
+                placeholder="EMAIL"
+                name="email"
+                value={formData.email}
+                onChange={handleFormChange}
+              />
+              <input
+                type="text"
+                className="input"
+                placeholder="YOUR BUDGET RANGE"
+                name="budget"
+                value={formData.budget}
+                onChange={handleFormChange}
+              />
+            </form>
+          )}
 
-        {/* services */}
-        {activeTab === 1 && (
-          <div className="contactService">
-            <h2>what do you need help with?</h2>
-            <div className="chooseService">
-              {services.map((service, indx) => {
-                return (
-                  <div className="serviceContainer" key={indx}>
-                    <img src={service.icon} alt={service.serviceName} />
-                    <p>{service.serviceName}</p>
-                    <input
-                      type="checkbox"
-                      name={service.serviceName}
-                      value=""
-                    />
-                  </div>
-                );
-              })}
+          {/* services */}
+          {activeTab === 1 && (
+            <div className="contactService">
+              <h2>what do you need help with?</h2>
+              <div className="chooseService">
+                {services.map((service, indx) => {
+                  return (
+                    <div className="serviceContainer" key={indx}>
+                      <img src={service.icon} alt={service.serviceName} />
+                      <p>{service.serviceName}</p>
+                      <input
+                        type="checkbox"
+                        name={service.serviceName}
+                        value={service.serviceName}
+                        checked={formData.services.includes(
+                          service.serviceName
+                        )}
+                        onChange={handleSelectedService}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+              <textarea
+                placeholder="Any More Description?"
+                value={formData.projectDescription}
+                name="projectDescription"
+                onChange={handleFormChange}
+              ></textarea>
             </div>
-            <textarea
-              placeholder="Any More Description?"
-              value=""
-              name="projectDescription"
-            ></textarea>
-          </div>
-        )}
-        {activeTab === 2 && (
-          <div className="projectDetails">
-            <h2>Lets talk about your needs</h2>
-            <div className="tellMore textSpace">
-              <label htmlFor="">Please tell us more about your project</label>
-              <textarea name="aboutProject" value=""></textarea>
+          )}
+          {activeTab === 2 && (
+            <div className="projectDetails">
+              <h2>Lets talk about your needs</h2>
+              <div className="tellMore textSpace">
+                <label htmlFor="">Please tell us more about your project</label>
+                <textarea
+                  name="aboutProject"
+                  value={formData.aboutProject}
+                  onChange={handleFormChange}
+                ></textarea>
+              </div>
+              <div className="deadLine textSpace">
+                <label htmlFor="">
+                  When would you like your project to start?
+                </label>
+                <textarea
+                  name="kickDate"
+                  className="deadLineText"
+                  value={formData.kickDate}
+                  onChange={handleFormChange}
+                ></textarea>
+              </div>
             </div>
-            <div className="deadLine textSpace">
-              <label htmlFor="">
-                When would you like your project to start?
-              </label>
-              <textarea name="kickOffDate" className="deadLineText"></textarea>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="positionBtn">
-        <div className="btns">
-          <button className="prevBtn" onClick={handlePreviousCarousel}>
-            <img src={prevBtn} alt="previous icon" />
-          </button>
-          {activeTab === contactDetails.length - 1 ? (
-            <button className="nextBtn" onClick={handleFormSubmit}>
-              SUBMIT
-              <img src={nextBtn} alt="Next button icon" />
-            </button>
-          ) : (
-            <button className="nextBtn" onClick={handleNextCarousel}>
-              NEXT
-              <img src={nextBtn} alt="Next button icon" />
-            </button>
           )}
         </div>
-      </div>
+        <div className="positionBtn">
+          <div className="btns">
+            <button className="prevBtn" onClick={handlePreviousCarousel}>
+              <img src={prevBtn} alt="previous icon" />
+            </button>
+            {activeTab === contactDetails.length - 1 ? (
+              <button className="nextBtn" onClick={handleFormSubmit}>
+                SUBMIT
+                <img src={nextBtn} alt="Next button icon" />
+              </button>
+            ) : (
+              <button className="nextBtn" onClick={handleNextCarousel}>
+                NEXT
+                <img src={nextBtn} alt="Next button icon" />
+              </button>
+            )}
+          </div>
+        </div>
+      </form>
     </div>
   );
 }
