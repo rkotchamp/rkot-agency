@@ -1,8 +1,11 @@
-import { useState, useContext, useRef } from "react";
+import { useState, useContext, useRef, useCallback } from "react";
 import prevBtn from "../../../assets/Images/prev.png";
 import nextBtn from "../../../assets/Images/next.png";
-import { services } from "../../../serviceData.json";
+import { Services } from "../../../serviceData.json";
 import ScrollToContactContext from "../../../context/ScrollContactContext";
+
+import axios from "axios";
+
 import "./Contact.css";
 
 const contactDetails = [
@@ -16,34 +19,37 @@ function Contact() {
   const { contactRef } = useContext(ScrollToContactContext);
   const formRef = useRef(null);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    companyName: "",
-    phoneNumber: "",
-    email: "",
-    budget: "",
-    country: "",
-    services: [],
-    projectDescription: "",
-    aboutProject: "",
-    kickDate: "",
+    FirstName: "",
+    LastName: "",
+    CompanyName: "",
+    PhoneNumber: "",
+    Email: "",
+    Budget: "",
+    Country: "",
+    Services: [],
+    ProjectDescription: "",
+    AboutProject: "",
+    KickDate: "",
   });
 
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+  const handleFormChange = useCallback(
+    (e) => {
+      const { name, value } = e.target;
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    },
+    [setFormData]
+  );
 
   const handleSelectedService = (e) => {
     const { value, checked } = e.target;
     setFormData((prevData) => {
-      const services = checked
-        ? [...prevData.services, value]
-        : prevData.services.filter((service) => service !== value);
-      return { ...prevData, services };
+      const updatedServices = checked
+        ? [...prevData.Services, value]
+        : prevData.Services.filter((service) => service !== value);
+      return { ...prevData, Services: updatedServices };
     });
   };
 
@@ -57,17 +63,63 @@ function Contact() {
     setActiveTab((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
-  const handleFormSubmit = (e) => {
-    // e, preventDefault();
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (formRef.current) {
-      const finalFormData = new FormData(formRef.current);
-      console.log(Object.fromEntries(finalFormData.entries()));
-    } else {
-      console.error("Form reference is null");
+    console.log("Form submitted:", formData);
+
+    const data = new FormData();
+    data.append("FirstName", formData.FirstName);
+    data.append("LastName", formData.LastName);
+    data.append("CompanyName", formData.CompanyName);
+    data.append("Email", formData.Email);
+    data.append("PhoneNumber", formData.PhoneNumber);
+    data.append("Budget", formData.Budget);
+    data.append("Country", formData.Country);
+    data.append("Services", formData.Services.join(", ")); // Assuming Services is an array
+    data.append("ProjectDescription", formData.ProjectDescription);
+    data.append("AboutProject", formData.AboutProject);
+    data.append("KickDate", formData.KickDate);
+
+    // Replace with your Google Apps Script URL
+    const Sheet_Url =
+      "https://script.google.com/macros/s/AKfycbym7zFqrwArlLJJnwE2tencBmVE11S_dkp-cZk4awAfCc9e0URTSOx9MrSAffCBNnU9TA/exec";
+
+    try {
+      const response = await fetch(Sheet_Url, {
+        method: "POST",
+        body: data,
+        mode: "cors",
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const result = await response.json();
+      // console.log("Data submitted successfully:", result);
+
+      setFormData({
+        FirstName: "",
+        LastName: "",
+        CompanyName: "",
+        Email: "",
+        PhoneNumber: "",
+        Budget: "",
+        Country: "",
+        Services: [],
+        ProjectDescription: "",
+        AboutProject: "",
+        KickDate: "",
+      });
+    } catch (error) {
+      console.error("Error submitting data:", error);
     }
   };
 
+  console.log(formData);
   // checked={formData.services.includes(service.serviceName)}
   return (
     <div className="contact_container" ref={contactRef}>
@@ -110,64 +162,64 @@ function Contact() {
       <form ref={formRef} onSubmit={handleFormSubmit}>
         <div className="formSpace">
           {activeTab === 0 && (
-            <form className="form">
+            <div className="form">
               <input
                 type="text"
                 className="input"
-                placeholder="FISRT NAME"
-                name="firstName"
-                value={formData.firstName}
+                placeholder="FIRST NAME"
+                name="FirstName"
+                value={formData.FirstName}
                 onChange={handleFormChange}
               />
               <input
                 type="text"
                 className="input"
                 placeholder="LAST NAME"
-                name="lastName"
-                value={formData.lastName}
+                name="LastName"
+                value={formData.LastName}
                 onChange={handleFormChange}
               />
               <input
                 type="text"
                 className="input"
                 placeholder="COMPANY NAME"
-                name="companyName"
-                value={formData.companyName}
+                name="CompanyName"
+                value={formData.CompanyName}
                 onChange={handleFormChange}
               />
               <input
                 type="text"
                 className="input"
                 placeholder="COUNTRY"
-                name="country"
-                value={formData.country}
+                name="Country"
+                value={formData.Country}
                 onChange={handleFormChange}
               />
               <input
                 type="text"
                 className="input"
                 placeholder="PHONE NUMBER"
-                name="phoneNumber"
-                value={formData.phoneNumber}
+                name="PhoneNumber"
+                value={formData.PhoneNumber}
                 onChange={handleFormChange}
               />
               <input
                 type="email"
                 className="input"
                 placeholder="EMAIL"
-                name="email"
-                value={formData.email}
+                name="Email"
+                value={formData.Email}
                 onChange={handleFormChange}
               />
               <input
                 type="text"
                 className="input"
                 placeholder="YOUR BUDGET RANGE"
-                name="budget"
-                value={formData.budget}
+                name="Budget"
+                value={formData.Budget}
                 onChange={handleFormChange}
               />
-            </form>
+            </div>
           )}
 
           {/* services */}
@@ -175,17 +227,17 @@ function Contact() {
             <div className="contactService">
               <h2>what do you need help with?</h2>
               <div className="chooseService">
-                {services.map((service, indx) => {
+                {Services.map((service, indx) => {
                   return (
                     <div className="serviceContainer" key={indx}>
-                      <img src={service.icon} alt={service.serviceName} />
-                      <p>{service.serviceName}</p>
+                      <img src={service.icon} alt={service.ServiceName} />
+                      <p>{service.ServiceName}</p>
                       <input
                         type="checkbox"
-                        name={service.serviceName}
-                        value={service.serviceName}
-                        checked={formData.services.includes(
-                          service.serviceName
+                        name="Services"
+                        value={service.ServiceName}
+                        checked={formData.Services.includes(
+                          service.ServiceName
                         )}
                         onChange={handleSelectedService}
                       />
@@ -195,8 +247,8 @@ function Contact() {
               </div>
               <textarea
                 placeholder="Any More Description?"
-                value={formData.projectDescription}
-                name="projectDescription"
+                value={formData.ProjectDescription}
+                name="ProjectDescription"
                 onChange={handleFormChange}
               ></textarea>
             </div>
@@ -217,7 +269,7 @@ function Contact() {
                   When would you like your project to start?
                 </label>
                 <textarea
-                  name="kickDate"
+                  name="KickDate"
                   className="deadLineText"
                   value={formData.kickDate}
                   onChange={handleFormChange}
@@ -228,16 +280,28 @@ function Contact() {
         </div>
         <div className="positionBtn">
           <div className="btns">
-            <button className="prevBtn" onClick={handlePreviousCarousel}>
+            <button
+              className="prevBtn"
+              onClick={handlePreviousCarousel}
+              type="button"
+            >
               <img src={prevBtn} alt="previous icon" />
             </button>
             {activeTab === contactDetails.length - 1 ? (
-              <button className="nextBtn" onClick={handleFormSubmit}>
+              <button
+                className="nextBtn"
+                onClick={handleFormSubmit}
+                type="submit"
+              >
                 SUBMIT
                 <img src={nextBtn} alt="Next button icon" />
               </button>
             ) : (
-              <button className="nextBtn" onClick={handleNextCarousel}>
+              <button
+                className="nextBtn"
+                onClick={handleNextCarousel}
+                type="button"
+              >
                 NEXT
                 <img src={nextBtn} alt="Next button icon" />
               </button>

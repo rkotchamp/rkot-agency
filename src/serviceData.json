@@ -1,15 +1,15 @@
 {
-  "services": [
+  "Services": [
     {
-      "serviceName": "Web Designer",
+      "ServiceName": "Web Designer",
       "icon": "/images2/web.png"
     },
     {
-      "serviceName": "Logo & Brand Identity",
+      "ServiceName": "Logo & Brand Identity",
       "icon": "/images2/logosAnd.png"
     },
     {
-      "serviceName": "Digital Services",
+      "ServiceName": "Digital Services",
       "icon": "/images2/digital.png"
     }
   ]
