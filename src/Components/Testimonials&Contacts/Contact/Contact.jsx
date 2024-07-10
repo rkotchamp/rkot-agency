@@ -3,6 +3,7 @@ import prevBtn from "../../../assets/Images/prev.png";
 import nextBtn from "../../../assets/Images/next.png";
 import { Services } from "../../../serviceData.json";
 import ScrollToContactContext from "../../../context/ScrollContactContext";
+import Loader from "../../Loaders/Loader";
 
 import axios from "axios";
 
@@ -20,7 +21,7 @@ function Contact() {
   const formRef = useRef(null);
   const [formData, setFormData] = useState({
     FirstName: "",
-    LastName: "",
+    Surname: "",
     CompanyName: "",
     PhoneNumber: "",
     Email: "",
@@ -32,6 +33,9 @@ function Contact() {
     KickDate: "",
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Form onChange
   const handleFormChange = useCallback(
     (e) => {
       const { name, value } = e.target;
@@ -43,44 +47,49 @@ function Contact() {
     [setFormData]
   );
 
+  // Checked Services
   const handleSelectedService = (e) => {
-    const { value, checked } = e.target;
+    const { name, value, checked } = e.target;
     setFormData((prevData) => {
       const updatedServices = checked
         ? [...prevData.Services, value]
         : prevData.Services.filter((service) => service !== value);
-      return { ...prevData, Services: updatedServices };
+      return { ...prevData, [name]: updatedServices };
     });
   };
 
-  const handleNextCarousel = () => {
+  // Next Carousel
+  const handleNextCarousel = useCallback(() => {
     setActiveTab((prev) =>
       prev < contactDetails.length - 1 ? prev + 1 : contactDetails.length - 1
     );
-  };
+  }, [setActiveTab]);
 
-  const handlePreviousCarousel = () => {
+  // Previous Carousel
+
+  const handlePreviousCarousel = useCallback(() => {
     setActiveTab((prev) => (prev > 0 ? prev - 1 : 0));
-  };
+  }, [setActiveTab]);
+
+  // Submit Data
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitted(true);
 
     const data = new FormData();
     data.append("FirstName", formData.FirstName);
-    data.append("LastName", formData.LastName);
+    data.append("Surname", formData.Surname);
     data.append("CompanyName", formData.CompanyName);
     data.append("Email", formData.Email);
     data.append("PhoneNumber", formData.PhoneNumber);
     data.append("Budget", formData.Budget);
     data.append("Country", formData.Country);
-    data.append("Services", formData.Services.join(", ")); // Assuming Services is an array
+    data.append("Services", formData.Services.join(", "));
     data.append("ProjectDescription", formData.ProjectDescription);
     data.append("AboutProject", formData.AboutProject);
     data.append("KickDate", formData.KickDate);
 
-    // Replace with your Google Apps Script URL
     const Sheet_Url =
       "https://script.google.com/macros/s/AKfycbym7zFqrwArlLJJnwE2tencBmVE11S_dkp-cZk4awAfCc9e0URTSOx9MrSAffCBNnU9TA/exec";
 
@@ -99,11 +108,11 @@ function Contact() {
       }
 
       const result = await response.json();
-      // console.log("Data submitted successfully:", result);
+      console.log("Data submitted successfully:", result);
 
       setFormData({
         FirstName: "",
-        LastName: "",
+        Surname: "",
         CompanyName: "",
         Email: "",
         PhoneNumber: "",
@@ -116,6 +125,9 @@ function Contact() {
       });
     } catch (error) {
       console.error("Error submitting data:", error);
+    } finally {
+      setIsSubmitted(false);
+      setActiveTab(0);
     }
   };
 
@@ -123,6 +135,7 @@ function Contact() {
   // checked={formData.services.includes(service.serviceName)}
   return (
     <div className="contact_container" ref={contactRef}>
+      {isSubmitted && <Loader />}
       {/* Carousel space */}
       <div className="indicator_container">
         {contactDetails.map((item, i) => {
@@ -175,8 +188,8 @@ function Contact() {
                 type="text"
                 className="input"
                 placeholder="LAST NAME"
-                name="LastName"
-                value={formData.LastName}
+                name="Surname"
+                value={formData.Surname}
                 onChange={handleFormChange}
               />
               <input
@@ -259,8 +272,8 @@ function Contact() {
               <div className="tellMore textSpace">
                 <label htmlFor="">Please tell us more about your project</label>
                 <textarea
-                  name="aboutProject"
-                  value={formData.aboutProject}
+                  name="AboutProject"
+                  value={formData.AboutProject}
                   onChange={handleFormChange}
                 ></textarea>
               </div>
@@ -271,44 +284,44 @@ function Contact() {
                 <textarea
                   name="KickDate"
                   className="deadLineText"
-                  value={formData.kickDate}
+                  value={formData.KickDate}
                   onChange={handleFormChange}
                 ></textarea>
               </div>
             </div>
           )}
         </div>
-        <div className="positionBtn">
-          <div className="btns">
+      </form>
+      <div className="positionBtn">
+        <div className="btns">
+          <button
+            className="prevBtn"
+            onClick={handlePreviousCarousel}
+            type="button"
+          >
+            <img src={prevBtn} alt="previous icon" />
+          </button>
+          {activeTab === contactDetails.length - 1 ? (
             <button
-              className="prevBtn"
-              onClick={handlePreviousCarousel}
+              className="nextBtn"
+              onClick={handleFormSubmit}
+              type="submit"
+            >
+              SUBMIT
+              <img src={nextBtn} alt="Next button icon" />
+            </button>
+          ) : (
+            <button
+              className="nextBtn"
+              onClick={handleNextCarousel}
               type="button"
             >
-              <img src={prevBtn} alt="previous icon" />
+              NEXT
+              <img src={nextBtn} alt="Next button icon" />
             </button>
-            {activeTab === contactDetails.length - 1 ? (
-              <button
-                className="nextBtn"
-                onClick={handleFormSubmit}
-                type="submit"
-              >
-                SUBMIT
-                <img src={nextBtn} alt="Next button icon" />
-              </button>
-            ) : (
-              <button
-                className="nextBtn"
-                onClick={handleNextCarousel}
-                type="button"
-              >
-                NEXT
-                <img src={nextBtn} alt="Next button icon" />
-              </button>
-            )}
-          </div>
+          )}
         </div>
-      </form>
+      </div>
     </div>
   );
 }
