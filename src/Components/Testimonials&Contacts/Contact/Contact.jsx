@@ -4,6 +4,7 @@ import nextBtn from "../../../assets/Images/next.png";
 import { Services } from "../../../serviceData.json";
 import ScrollToContactContext from "../../../context/ScrollContactContext";
 import Loader from "../../Loaders/Loader";
+import dotenv from "dotenv";
 
 import axios from "axios";
 
@@ -32,8 +33,8 @@ function Contact() {
     AboutProject: "",
     KickDate: "",
   });
-
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorHandler, setErrorHandler] = useState(" ");
 
   // Form onChange
   const handleFormChange = useCallback(
@@ -43,8 +44,21 @@ function Contact() {
         ...prevData,
         [name]: value,
       }));
+
+      if (activeTab === 0) {
+        if (
+          name === "FirstName" ||
+          name === "Surname" ||
+          name === "CompanyName" ||
+          name === "Email" ||
+          name === "PhoneNumber" ||
+          name === "Country"
+        ) {
+          setErrorHandler("");
+        }
+      }
     },
-    [setFormData]
+    [setFormData, activeTab]
   );
 
   // Checked Services
@@ -59,11 +73,60 @@ function Contact() {
   };
 
   // Next Carousel
+  // const handleNextCarousel = useCallback(() => {
+  //   setActiveTab((prev) => {
+  //     if (prev === 0) {
+  //       if (formData.FirstName === "") {
+  //         setErrorHandler("Oh you Hurry Potter tell us your first name");
+  //       } else if (formData.Surname === "") {
+  //         setErrorHandler("Oh you Hurry Potter tell us your Last name");
+  //       } else if (formData.CompanyName === "") {
+  //         setErrorHandler("Please fill in your company");
+  //       } else if (formData.Email) {
+  //         setErrorHandler("Please fill in your Email");
+  //       } else if (formData.PhoneNumber) {
+  //         setErrorHandler("Please fill in your Phone number");
+  //       } else if (formData.Country) {
+  //         setErrorHandler("Please fill in your Country");
+  //       }
+  //       prev + 1;
+  //     } else {
+  //     }
+  //     // prev < contactDetails.length - 1 ? prev + 1 : contactDetails.length - 1
+  //   });
+  // }, [setActiveTab]);
   const handleNextCarousel = useCallback(() => {
-    setActiveTab((prev) =>
-      prev < contactDetails.length - 1 ? prev + 1 : contactDetails.length - 1
-    );
-  }, [setActiveTab]);
+    setActiveTab((prev) => {
+      if (prev === 0) {
+        if (formData.FirstName === "") {
+          setErrorHandler("Oh you Hurry Potter tell us your first name");
+          return prev;
+        } else if (formData.Surname === "") {
+          setErrorHandler("Oh you Hurry Potter tell us your Last name");
+          return prev;
+        } else if (formData.CompanyName === "") {
+          setErrorHandler("Please fill in your company");
+          return prev;
+        } else if (formData.Email === "") {
+          setErrorHandler("Please fill in your Email");
+          return prev;
+        } else if (formData.PhoneNumber === "") {
+          setErrorHandler("Please fill in your Phone number");
+          return prev;
+        } else if (formData.Country === "") {
+          setErrorHandler("Please fill in your Country");
+          return prev;
+        }
+        // Clear the error if all fields are filled
+        setErrorHandler("");
+      }
+
+      // Proceed to the next tab
+      return prev < contactDetails.length - 1
+        ? prev + 1
+        : contactDetails.length - 1;
+    });
+  }, [formData, setActiveTab, setErrorHandler]);
 
   // Previous Carousel
 
@@ -90,9 +153,9 @@ function Contact() {
     data.append("AboutProject", formData.AboutProject);
     data.append("KickDate", formData.KickDate);
 
-    const Sheet_Url =
-      "https://script.google.com/macros/s/AKfycbym7zFqrwArlLJJnwE2tencBmVE11S_dkp-cZk4awAfCc9e0URTSOx9MrSAffCBNnU9TA/exec";
-
+    // const Sheet_Url =
+    //   "https://script.google.com/macros/s/AKfycbym7zFqrwArlLJJnwE2tencBmVE11S_dkp-cZk4awAfCc9e0URTSOx9MrSAffCBNnU9TA/exec";
+    const Sheet_Url = import.meta.env.VITE_GOOGLE_KEY;
     try {
       const response = await fetch(Sheet_Url, {
         method: "POST",
@@ -308,7 +371,7 @@ function Contact() {
               type="submit"
             >
               SUBMIT
-              <img src={nextBtn} alt="Next button icon" />
+              {/* <img src={nextBtn} alt="Next button icon" /> */}
             </button>
           ) : (
             <button
@@ -322,6 +385,7 @@ function Contact() {
           )}
         </div>
       </div>
+      {errorHandler && <p className="errorHandler">{errorHandler}</p>}
     </div>
   );
 }

@@ -303,3 +303,8 @@
     background-color: var(--focus-color);
   }
 }
+
+.errorHandler {
+  font-family: var(--primary-font-family);
+  color: var(--focus-color);
+}
