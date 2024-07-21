@@ -35,6 +35,7 @@ function Contact() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorHandler, setErrorHandler] = useState(" ");
+  const [isSelected, setIsSelected] = useState(false);
 
   // Form onChange
   const handleFormChange = useCallback(
@@ -62,16 +63,43 @@ function Contact() {
   );
 
   // Checked Services
+  // const handleSelectedService = (e) => {
+  //   setSelected(!selected);
+  //   const { name, value, checked } = e.target;
+  //   setFormData((prevData) => {
+  //     const updatedServices = checked
+  //       ? [...prevData.Services, value]
+  //       : prevData.Services.filter((service) => service !== value);
+  //     return { ...prevData, [name]: updatedServices };
+  //   });
+  // };
   const handleSelectedService = (e) => {
+    e.stopPropagation();
     const { name, value, checked } = e.target;
+    console.log("Checkbox Event:", { name, value, checked });
     setFormData((prevData) => {
       const updatedServices = checked
-        ? [...prevData.Services, value]
+        ? [
+            ...prevData.Services.filter(
+              (service) => typeof service === "string"
+            ),
+            value,
+          ]
         : prevData.Services.filter((service) => service !== value);
+      console.log("Updated Services:", updatedServices);
       return { ...prevData, [name]: updatedServices };
     });
   };
 
+  const handleContainerClick = (serviceName) => {
+    const isSelected = formData.Services.includes(serviceName);
+    setFormData((prevData) => {
+      const updatedServices = isSelected
+        ? prevData.Services.filter((service) => service !== serviceName)
+        : [...prevData.Services, serviceName];
+      return { ...prevData, Services: updatedServices };
+    });
+  };
   // Next Carousel
   // const handleNextCarousel = useCallback(() => {
   //   setActiveTab((prev) => {
@@ -198,7 +226,11 @@ function Contact() {
   // checked={formData.services.includes(service.serviceName)}
   return (
     <div className="contact_container" ref={contactRef}>
-      {isSubmitted && <Loader />}
+      {isSubmitted && (
+        <div className="loader-overlay">
+          <Loader />
+        </div>
+      )}
       {/* Carousel space */}
       <div className="indicator_container">
         {contactDetails.map((item, i) => {
@@ -305,16 +337,22 @@ function Contact() {
               <div className="chooseService">
                 {Services.map((service, indx) => {
                   return (
-                    <div className="serviceContainer" key={indx}>
+                    <div
+                      className={
+                        isSelected
+                          ? "serviceContainer activeSelect"
+                          : "serviceContainer"
+                      }
+                      key={indx}
+                      onClick={handleContainerClick}
+                    >
                       <img src={service.icon} alt={service.ServiceName} />
                       <p>{service.ServiceName}</p>
                       <input
                         type="checkbox"
                         name="Services"
                         value={service.ServiceName}
-                        checked={formData.Services.includes(
-                          service.ServiceName
-                        )}
+                        checked={isSelected}
                         onChange={handleSelectedService}
                       />
                     </div>
@@ -385,7 +423,11 @@ function Contact() {
           )}
         </div>
       </div>
-      {errorHandler && <p className="errorHandler">{errorHandler}</p>}
+      {errorHandler && (
+        <div className="errorHandler">
+          <p>{errorHandler}</p>
+        </div>
+      )}
     </div>
   );
 }
