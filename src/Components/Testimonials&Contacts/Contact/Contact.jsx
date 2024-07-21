@@ -35,7 +35,7 @@ function Contact() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorHandler, setErrorHandler] = useState(" ");
-  const [isSelected, setIsSelected] = useState(false);
+  const [isSelected, setIsSelected] = useState();
 
   // Form onChange
   const handleFormChange = useCallback(
@@ -62,17 +62,6 @@ function Contact() {
     [setFormData, activeTab]
   );
 
-  // Checked Services
-  // const handleSelectedService = (e) => {
-  //   setSelected(!selected);
-  //   const { name, value, checked } = e.target;
-  //   setFormData((prevData) => {
-  //     const updatedServices = checked
-  //       ? [...prevData.Services, value]
-  //       : prevData.Services.filter((service) => service !== value);
-  //     return { ...prevData, [name]: updatedServices };
-  //   });
-  // };
   const handleSelectedService = (e) => {
     e.stopPropagation();
     const { name, value, checked } = e.target;
@@ -89,67 +78,71 @@ function Contact() {
       console.log("Updated Services:", updatedServices);
       return { ...prevData, [name]: updatedServices };
     });
+    if (formData.Services.length === 0 && checked) {
+      setErrorHandler("");
+    }
   };
 
   const handleContainerClick = (serviceName) => {
-    const isSelected = formData.Services.includes(serviceName);
     setFormData((prevData) => {
+      const isSelected = formData.Services.includes(serviceName);
       const updatedServices = isSelected
         ? prevData.Services.filter((service) => service !== serviceName)
         : [...prevData.Services, serviceName];
+      if (updatedServices.length > 0) {
+        setErrorHandler("");
+      }
       return { ...prevData, Services: updatedServices };
     });
   };
+
   // Next Carousel
-  // const handleNextCarousel = useCallback(() => {
-  //   setActiveTab((prev) => {
-  //     if (prev === 0) {
-  //       if (formData.FirstName === "") {
-  //         setErrorHandler("Oh you Hurry Potter tell us your first name");
-  //       } else if (formData.Surname === "") {
-  //         setErrorHandler("Oh you Hurry Potter tell us your Last name");
-  //       } else if (formData.CompanyName === "") {
-  //         setErrorHandler("Please fill in your company");
-  //       } else if (formData.Email) {
-  //         setErrorHandler("Please fill in your Email");
-  //       } else if (formData.PhoneNumber) {
-  //         setErrorHandler("Please fill in your Phone number");
-  //       } else if (formData.Country) {
-  //         setErrorHandler("Please fill in your Country");
-  //       }
-  //       prev + 1;
-  //     } else {
-  //     }
-  //     // prev < contactDetails.length - 1 ? prev + 1 : contactDetails.length - 1
-  //   });
-  // }, [setActiveTab]);
   const handleNextCarousel = useCallback(() => {
     setActiveTab((prev) => {
       if (prev === 0) {
         if (formData.FirstName === "") {
-          setErrorHandler("Oh you Hurry Potter tell us your first name");
+          setErrorHandler(
+            "Oh, don’t be a stranger! We need your first name, please."
+          );
           return prev;
         } else if (formData.Surname === "") {
-          setErrorHandler("Oh you Hurry Potter tell us your Last name");
+          setErrorHandler(
+            "Who’s the mysterious stranger? We need your last name to proceed."
+          );
           return prev;
         } else if (formData.CompanyName === "") {
-          setErrorHandler("Please fill in your company");
+          setErrorHandler(
+            "Every hero has a guild! Reveal your company name to continue."
+          );
           return prev;
         } else if (formData.Email === "") {
-          setErrorHandler("Please fill in your Email");
+          setErrorHandler(
+            "Don’t leave us in the dark! Tell us your email to keep the magic flowing."
+          );
           return prev;
         } else if (formData.PhoneNumber === "") {
-          setErrorHandler("Please fill in your Phone number");
+          setErrorHandler(
+            "A phone number is essential! We need to contact you—what's your number?"
+          );
           return prev;
         } else if (formData.Country === "") {
-          setErrorHandler("Please fill in your Country");
+          setErrorHandler(
+            "Every wizard needs a home base! What country do you hail from?"
+          );
           return prev;
         }
-        // Clear the error if all fields are filled
+
+        setErrorHandler("");
+      } else if (prev === 1) {
+        if (formData.Services.length === 0) {
+          setErrorHandler(
+            "No services selected? We need to know what you seek help with!"
+          );
+          return prev;
+        }
         setErrorHandler("");
       }
 
-      // Proceed to the next tab
       return prev < contactDetails.length - 1
         ? prev + 1
         : contactDetails.length - 1;
@@ -157,17 +150,14 @@ function Contact() {
   }, [formData, setActiveTab, setErrorHandler]);
 
   // Previous Carousel
-
   const handlePreviousCarousel = useCallback(() => {
     setActiveTab((prev) => (prev > 0 ? prev - 1 : 0));
   }, [setActiveTab]);
 
   // Submit Data
-
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-
     const data = new FormData();
     data.append("FirstName", formData.FirstName);
     data.append("Surname", formData.Surname);
@@ -181,8 +171,6 @@ function Contact() {
     data.append("AboutProject", formData.AboutProject);
     data.append("KickDate", formData.KickDate);
 
-    // const Sheet_Url =
-    //   "https://script.google.com/macros/s/AKfycbym7zFqrwArlLJJnwE2tencBmVE11S_dkp-cZk4awAfCc9e0URTSOx9MrSAffCBNnU9TA/exec";
     const Sheet_Url = import.meta.env.VITE_GOOGLE_KEY;
     try {
       const response = await fetch(Sheet_Url, {
@@ -199,7 +187,6 @@ function Contact() {
       }
 
       const result = await response.json();
-      console.log("Data submitted successfully:", result);
 
       setFormData({
         FirstName: "",
@@ -222,8 +209,6 @@ function Contact() {
     }
   };
 
-  console.log(formData);
-  // checked={formData.services.includes(service.serviceName)}
   return (
     <div className="contact_container" ref={contactRef}>
       {isSubmitted && (
@@ -339,15 +324,23 @@ function Contact() {
                   return (
                     <div
                       className={
-                        isSelected
+                        formData.Services.includes(service.ServiceName)
                           ? "serviceContainer activeSelect"
                           : "serviceContainer"
                       }
                       key={indx}
-                      onClick={handleContainerClick}
+                      onClick={() => handleContainerClick(service.ServiceName)}
                     >
                       <img src={service.icon} alt={service.ServiceName} />
-                      <p>{service.ServiceName}</p>
+                      <p
+                        className={
+                          formData.Services.includes(service.ServiceName)
+                            ? "activeSelectText"
+                            : "serveText"
+                        }
+                      >
+                        {service.ServiceName}
+                      </p>
                       <input
                         type="checkbox"
                         name="Services"

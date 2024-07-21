@@ -179,7 +179,7 @@
   color: #fff; /* Text color for visibility */
   border-color: var(--focus-color);
 }
-.chooseService .serviceContainer p {
+.chooseService .serviceContainer .serveText {
   width: 123px;
   height: 37px;
   font-size: 14px;
@@ -192,6 +192,18 @@
   justify-content: center;
 }
 
+.activeSelectText {
+  width: 123px;
+  height: 37px;
+  font-size: 14px;
+  font-family: var(--secondary-font-family);
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .contactService textarea {
   width: 88%;
   height: 118px;
@@ -246,11 +258,21 @@
 }
 
 .textSpace textarea {
-  width: 85%;
+  width: 88%;
   height: 118px;
+  font-family: var(--secondary-font-family);
+  text-transform: normal;
   background-color: var(--dark-primary-color);
   border: none;
   resize: none;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.textSpace textarea:focus,
+.textSpace textarea:active {
+  outline: none;
+  border: 1px solid var(--light-focus-color);
 }
 
 .textSpace .deadLineText {
@@ -267,6 +289,37 @@
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 500;
+}
+.serviceContainer input[type="checkbox"] {
+  opacity: 0; /* Hide the default checkbox */
+  /* position: absolute; Remove it from the document flow */
+}
+
+.errorHandler {
+  height: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--primary-font-family);
+  color: var(--focus-color);
+}
+
+.errorHandler p {
+  width: 300px;
+  text-align: center;
+}
+/* Centered Loader Overlay */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -309,28 +362,4 @@
     border: none;
     background-color: var(--focus-color);
   }
-}
-
-.errorHandler {
-  height: 5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: red; */
-  font-family: var(--primary-font-family);
-  color: var(--focus-color);
-}
-
-/* Centered Loader Overlay */
-.loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
 }
