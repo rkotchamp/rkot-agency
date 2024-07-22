@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import NavShowContext from "../../context/NavShowContext";
 import { Link } from "react-router-dom";
 import ScrollToContactContext from "../../context/ScrollContactContext";
+
 import "./BurgerMenu.css";
 
 function BurgerMenu() {
@@ -90,6 +91,9 @@ function BurgerMenu() {
           </Link>
           <Link to="/about-us" onClick={hideNavClick}>
             <li>ABOUT US</li>
+          </Link>
+          <Link to="/blogs" onClick={hideNavClick}>
+            <li>BLOG</li>
           </Link>
           <li
             onClick={() => {
