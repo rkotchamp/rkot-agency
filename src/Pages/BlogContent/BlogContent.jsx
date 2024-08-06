@@ -6,7 +6,7 @@ import Banner from "../../assets/Images/Banner.png";
 import Social from "../../Components/SocialBlock/Social";
 import Blog from "../../Components/Blog/Blog";
 import "./BlogContent.css";
-import Contact from "../../Components/Testimonials&Contacts/Contact/Contact";
+
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
 

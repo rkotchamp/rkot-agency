@@ -18,12 +18,14 @@ function Social() {
       </div>
 
       <div className="callToActionSpace">
-        <p className="question">Want a free Consultation?</p>
-        <p className="call_description">
-          Lectus at cras elit a morbi lectus nisl. Sem amet quam odio vitae
-          habitant blandit. Suspendisse at metus commodo nibh at. Tellus amet
-          sem non commodo sit. Dolor sed nisi maecenas ut l
-        </p>
+        <div className="questAndDescription">
+          <p className="question">Want a free Consultation?</p>
+          <p className="call_description">
+            Lectus at cras elit a morbi lectus nisl. Sem amet quam odio vitae
+            habitant blandit. Suspendisse at metus commodo nibh at. Tellus amet
+            sem non commodo sit. Dolor sed nisi maecenas ut l
+          </p>
+        </div>
         <button className="blog_btn">Contact Us Now </button>
       </div>
     </div>
