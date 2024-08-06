@@ -1,0 +1,75 @@
+.blog_content_banner {
+  width: 80%;
+  height: auto;
+  background-color: var(--dark-primary-color);
+}
+
+.blog_content_banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.text_content_and_socials {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.text_content_and_socials .text_content {
+  width: 622px;
+  height: auto;
+}
+.text_content_and_socials .text_content .titles {
+  width: 622px;
+  height: 160px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.titles h3 {
+  width: 622px;
+  height: auto;
+  font-family: var(--secondary-font-family);
+  font-size: var(--hero-text-font-size);
+  color: var(--body-color);
+  font-weight: 500;
+}
+.text_content_and_socials .text_content .textBlog p {
+  width: 622px;
+  height: auto;
+  text-align: left;
+  font-family: "Raleway";
+  font-size: 16px;
+}
+
+.socialStyleController {
+  margin-top: -60px;
+}
+
+.control_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.relatedPosts {
+  margin-top: 40px;
+}
+.relatedPosts .posts {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.relatedPosts h4 {
+  font-family: var(--secondary-font-family);
+  font-size: var(--mid-text-font-size);
+  margin-bottom: 20px;
+}
+
+.controlContact {
+  margin-top: 100px;
+  z-index: 1000;
+}
