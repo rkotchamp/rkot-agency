@@ -249,12 +249,13 @@
 }
 
 .textSpace {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 10px; */
   width: 100%;
+  /* background-color: red; */
 }
 
 .textSpace textarea {

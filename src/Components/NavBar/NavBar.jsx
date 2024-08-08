@@ -2,7 +2,6 @@ import { useContext, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Images/rkot official-01 1.png";
 import { RxHamburgerMenu } from "react-icons/rx";
-import BurgerMenu from "../OpenBurgerMenu/BurgerMenu";
 import NavShowContext from "../../context/NavShowContext";
 import ScrollToContactContext from "../../context/ScrollContactContext";
 

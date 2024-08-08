@@ -5,13 +5,13 @@ import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import Banner from "../../assets/Images/Banner.png";
 import Social from "../../Components/SocialBlock/Social";
 import Blog from "../../Components/Blog/Blog";
-import "./BlogContent.css";
-
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
+import "./BlogContent.css";
 
 function BlogContent() {
   const { hideNav, showNav } = useContext(NavShowContext);
+
   return (
     <div className="article_content_container">
       {showNav && <BurgerMenu />}

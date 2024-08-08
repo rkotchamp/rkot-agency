@@ -1,10 +1,13 @@
+import { useContext } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
 import { PiLink } from "react-icons/pi";
+import ScrollToContactContext from "../../context/ScrollContactContext";
 import "./Social.css";
 
 function Social() {
+  const { scrollToContact } = useContext(ScrollToContactContext);
   return (
     <div className="social_blog_container">
       <div className="shareAndSocial">
@@ -26,7 +29,9 @@ function Social() {
             sem non commodo sit. Dolor sed nisi maecenas ut l
           </p>
         </div>
-        <button className="blog_btn">Contact Us Now </button>
+        <button className="blog_btn" onClick={scrollToContact}>
+          Contact Us Now{" "}
+        </button>
       </div>
     </div>
   );

@@ -89,6 +89,9 @@
     justify-content: space-around;
     gap: 20px;
   }
+  .relatedPosts {
+    width: 700px;
+  }
 }
 
 /* Mobile Phone */
@@ -133,5 +136,8 @@
 
     height: auto;
     padding: 10px;
+  }
+  .relatedPosts {
+    width: 500px;
   }
 }
