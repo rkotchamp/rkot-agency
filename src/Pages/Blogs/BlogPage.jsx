@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import NavBar from "../../Components/NavBar/NavBar";
 import NavShowContext from "../../context/NavShowContext";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
@@ -6,37 +6,59 @@ import Blog from "../../Components/Blog/Blog";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
 import { createClient } from "contentful";
+import Banner from "../../assets/Images/Banner.png";
 import "./BlogPage.css";
 
 function BlogPage() {
   const { hideNav, showNav } = useContext(NavShowContext);
-  const [blogPage, SetBlogPage] = useState([]);
+  const [blogPage, setBlogPage] = useState([]);
 
   const client = createClient({
     space: import.meta.env.VITE_CONTENTFUL_SPACEID_KEY,
     accessToken: import.meta.env.VITE_CONTENTFUL_ACCESSTOKEN_KEY,
   });
 
-  useEffect(() => {
-    const getBlogPage = async () => {
-      try {
-        await client.getEntries().then((entries) => console.log(entries));
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    getBlogPage();
+  const getBlogPage = useCallback(async () => {
+    try {
+      const response = await client.getEntries({
+        content_type: "agencyBlogPage",
+      });
+
+      setBlogPage(response.items);
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
+
+  useEffect(() => {
+    getBlogPage();
+  }, [getBlogPage]);
+
+  // Console log each time state  updates
+  useEffect(() => {
+    console.log(blogPage[0]);
+  }, [blogPage]);
 
   return (
     <div className="blogPage_container">
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
+
       <div className="main">
         <div className="styleEntirePage">
-          <div className="content_main_banner">
-            <h2>Posts and Articles that are worth reading</h2>
-          </div>
+          {blogPage.map((item, index) => {
+            return item.fields.publish === true ? (
+              <div className="content_main_banner" key={index}>
+                <h2>{item.fields.title}</h2>
+                <img
+                  src={item.fields.pageCover.fields.file.url}
+                  alt=""
+                  className="coverImage"
+                />
+              </div>
+            ) : null;
+          })}
+
           <div className="section_topic_and_grid">
             <h2>Latest Stories</h2>
             <div className="render_article_container">
