@@ -6,7 +6,6 @@ import Blog from "../../Components/Blog/Blog";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
 import { createClient } from "contentful";
-import Banner from "../../assets/Images/Banner.png";
 import "./BlogPage.css";
 
 function BlogPage() {
@@ -34,11 +33,6 @@ function BlogPage() {
     getBlogPage();
   }, [getBlogPage]);
 
-  // Console log each time state  updates
-  useEffect(() => {
-    console.log(blogPage[0]);
-  }, [blogPage]);
-
   return (
     <div className="blogPage_container">
       {showNav && <BurgerMenu />}
@@ -52,7 +46,7 @@ function BlogPage() {
                 <h2>{item.fields.title}</h2>
                 <img
                   src={item.fields.pageCover.fields.file.url}
-                  alt=""
+                  alt="Web development agency blog age banner"
                   className="coverImage"
                 />
               </div>
