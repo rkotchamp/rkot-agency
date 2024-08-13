@@ -57,11 +57,6 @@ function BlogPage() {
             <h2>Latest Stories</h2>
             <div className="render_article_container">
               <Blog />
-              <Blog />
-              <Blog />
-              <Blog />
-              <Blog />
-              <Blog />
             </div>
           </div>
         </div>

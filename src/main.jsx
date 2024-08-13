@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { NavShowProvider } from "./context/NavShowContext.jsx";
 import { ScrollToContactProvider } from "./context/ScrollContactContext.jsx";
+import { BlogContextProvider } from "./context/BlogContext.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <ScrollToContactProvider>
         <NavShowProvider>
-          <App />
+          <BlogContextProvider>
+            <App />
+          </BlogContextProvider>
         </NavShowProvider>
       </ScrollToContactProvider>
     </BrowserRouter>

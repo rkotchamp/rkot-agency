@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useParams } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
 import NavShowContext from "../../context/NavShowContext";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
@@ -7,66 +8,103 @@ import Social from "../../Components/SocialBlock/Social";
 import Blog from "../../Components/Blog/Blog";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
+import BlogContext from "../../context/BlogContext";
 import "./BlogContent.css";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
 function BlogContent() {
   const { hideNav, showNav } = useContext(NavShowContext);
+  const { realBlog } = useContext(BlogContext);
+  const { id } = useParams();
 
+  // Filter to find the blog post with the matching id
+  const blogDetails = realBlog.filter((item) => item.sys.id === id);
+
+  const RICHTEXT_OPTION = {
+    preserveWhitespace: true,
+    renderMark: {
+      [MARKS.BOLD]: (text) => <strong>{text}</strong>,
+      [MARKS.ITALIC]: (text) => <em>{text}</em>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+      [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
+      [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
+      [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
+      [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
+      [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
+      [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { title, file } = node.data.target.fields;
+        const imageUrl = file.url;
+        return <img src={imageUrl} alt={title} className="embedded-asset" />;
+      },
+      [INLINES.HYPERLINK]: (node, children) => {
+        const { uri } = node.data;
+        return (
+          <a href={uri} className="hyperlink">
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+  // const RICHTEXT_OPTION = {
+  //   renderNode: {
+  //     [BLOCKS.EMBEDDED_ASSET]: (node) => {
+  //       const { title, file } = node.data.target.fields;
+  //       const imageUrl = `https:${file.url}`;
+  //       return <img src={imageUrl} alt={title} className="embedded-asset" />;
+  //     },
+  //   },
+  //   renderText: (text) => {
+  //     return text.split("\n").reduce((children, textSegment, index) => {
+  //       return [...children, index > 0 && <br key={index} />, textSegment];
+  //     }, []);
+  //   },
+  // };
+  console.log(blogDetails);
   return (
     <div className="article_content_container">
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
 
       <div className="control_content">
-        <div className="blog_content_banner">
-          <img src={Banner} alt="Blog content banner" />
-        </div>
-        <div className="text_content_and_socials">
-          <div className="text_content">
-            <div className="titles">
-              <p>Tagline</p>
-              <h3>Title Explaining Why It’s Worth Reading</h3>
+        {blogDetails.length > 0 ? (
+          <>
+            <div className="blog_content_banner">
+              <img
+                src={blogDetails[0]?.fields?.coverImage?.fields?.file?.url}
+                alt="Blog content banner"
+              />
             </div>
-            <div className="textBlog">
-              <p>
-                Amet sit sit dolor bibendum. Curabitur scelerisque egestas nisl
-                purus neque suscipit mauris. Egestas vitae felis a amet ut massa
-                cursus mollis adipiscing. Magna habitant amet egestas sed sed.
-                In nascetur tempus arcu bibendum quisque commodo. Lectus at cras
-                elit a morbi lectus nisl. Sem amet quam odio vitae habitant
-                blandit. Suspendisse at metus camet sem non commodo sit. Dolor
-                sed nisi maecenas ut laoreet faucibus quisque. Nec tristique
-                purus duis vitae mauris amet. At blandit adipiscing ipsum tempor
-                ullamcorper diam porttitor pellentesque arcu. Non ornare
-                pellentesque nunc lacus lacinia et massa. Sed sit dui luctus
-                diam quis dignissim vestibulum iaculis feugiat. Laoreet laoreet
-                dignissim amet eros vestibulum. Ridiculus quis nulla massa duis
-                sit diam egestas iaculis. Arcu sagittis consequat id massa. Amet
-                diam ac rhoncus quam. Libero id non sodales semper diam dictum
-                amet non. Gravida elementum amet cras enim. Dictum consectetur
-                pharetra tempus mattis iaculis molestie mauris. Urna ut
-                curabitur ac non vitae feugiat fringilla turpis vehicula.
-                Viverra at massa at mi. Sapien orci mi odio ornare lectus. Proin
-                ipsum congue libero sit habitasse nibh. Mattis dis purus eget
-                est vivamus. Sodales sagittis nibh tincidunt morbi magna
-                pellentesque aliquam egestas semper. Laoreet leo ac praesent
-                dictum at et dictum aliquam. Interdum lobortis tristique viverra
-                accumsan venenatis. Ipsum dui sit tellus viverra. Vestibulum
-                libero blandit mi urna commodo leo tempus id. Ut nunc mauris
-                eros eget montes tortor. Ut commodo consequat varius adipiscing.
-                Mauris tellus sit enim non pharetra tellus vitae.
-              </p>
+            <div className="text_content_and_socials">
+              <div className="text_content">
+                <div className="titles">
+                  <p>{blogDetails[0]?.fields?.domain}</p>
+                  <h3>{blogDetails[0]?.fields?.title}</h3>
+                </div>
+                <div className="textBlog">
+                  {documentToReactComponents(
+                    blogDetails[0]?.fields?.content,
+                    RICHTEXT_OPTION
+                  )}
+                  {/* <p>{blogDetails[0]?.fields?.content}</p> */}
+                </div>
+              </div>
+              <div className="socialStyleController">
+                <Social />
+              </div>
             </div>
-          </div>
-          <div className="socialStyleController">
-            <Social />
-          </div>
-        </div>
+          </>
+        ) : (
+          <p>Blog not found</p>
+        )}
+
         <div className="relatedPosts">
           <h4>Related Posts :</h4>
           <div className="posts">
-            <Blog />
-            <Blog />
             <Blog />
           </div>
         </div>
