@@ -32,3 +32,12 @@
 .text_container .topic {
   color: var(--focus-color);
 }
+
+a {
+  text-decoration: none;
+  color: var(--body-color);
+}
+
+.title_and_summary p {
+  font-family: "Raleway";
+}

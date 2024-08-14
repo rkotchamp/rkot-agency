@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
 import NavShowContext from "../../context/NavShowContext";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
-import Banner from "../../assets/Images/Banner.png";
 import Social from "../../Components/SocialBlock/Social";
 import Blog from "../../Components/Blog/Blog";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
@@ -20,6 +19,11 @@ function BlogContent() {
 
   // Filter to find the blog post with the matching id
   const blogDetails = realBlog.filter((item) => item.sys.id === id);
+
+  const currentDomain = blogDetails[0]?.fields.domain;
+  const relatedPosts = realBlog.filter(
+    (item) => item.fields.domain === currentDomain && item.sys.id !== id
+  );
 
   const RICHTEXT_OPTION = {
     preserveWhitespace: true,
@@ -56,7 +60,7 @@ function BlogContent() {
       },
     },
   };
-
+  console.log(blogDetails[0]?.fields.domain);
   return (
     <div className="article_content_container">
       {showNav && <BurgerMenu />}
@@ -97,7 +101,11 @@ function BlogContent() {
         <div className="relatedPosts">
           <h4>Related Posts :</h4>
           <div className="posts">
-            <Blog />
+            {relatedPosts.length > 0 ? (
+              <Blog posts={relatedPosts} />
+            ) : (
+              <p>No Related Post</p>
+            )}
           </div>
         </div>
         <div className="controlContact">

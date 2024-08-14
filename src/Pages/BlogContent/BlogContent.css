@@ -15,6 +15,7 @@
   justify-content: space-between;
   gap: 50px;
   position: relative;
+  margin-bottom: 200px;
 }
 
 .text_content_and_socials .text_content {
@@ -24,13 +25,14 @@
 .text_content_and_socials .text_content .titles {
   width: 622px;
   height: 160px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
   margin-top: 40px;
 }
 
 .titles h3 {
-  width: 622px;
+  width: 650px;
   height: auto;
+  /* background-color: red; */
   font-family: var(--secondary-font-family);
   font-size: var(--hero-text-font-size);
   color: var(--body-color);

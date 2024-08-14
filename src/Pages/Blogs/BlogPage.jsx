@@ -6,10 +6,12 @@ import Blog from "../../Components/Blog/Blog";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
 import { createClient } from "contentful";
+import BlogContext from "../../context/BlogContext";
 import "./BlogPage.css";
 
 function BlogPage() {
   const { hideNav, showNav } = useContext(NavShowContext);
+  const { realBlog } = useContext(BlogContext);
   const [blogPage, setBlogPage] = useState([]);
 
   const client = createClient({
@@ -56,7 +58,7 @@ function BlogPage() {
           <div className="section_topic_and_grid">
             <h2>Latest Stories</h2>
             <div className="render_article_container">
-              <Blog />
+              <Blog posts={realBlog} />
             </div>
           </div>
         </div>

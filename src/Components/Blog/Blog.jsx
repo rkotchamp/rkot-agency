@@ -3,13 +3,13 @@ import BlogContext from "../../context/BlogContext";
 import { Link } from "react-router-dom";
 import "./Blog.css";
 
-function Blog() {
+function Blog({ posts }) {
   const { realBlog } = useContext(BlogContext);
   // console.log(realBlog);
 
   return (
     <>
-      {realBlog.map((item, index) => {
+      {posts.map((item, index) => {
         return item.fields.publish ? (
           <Link to={`/blogs/${item.sys.id}`}>
             <div className="blog_container" key={index}>

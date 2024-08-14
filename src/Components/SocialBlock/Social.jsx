@@ -30,7 +30,7 @@ function Social() {
           </p>
         </div>
         <button className="blog_btn" onClick={scrollToContact}>
-          Contact Us Now{" "}
+          Contact Us Now
         </button>
       </div>
     </div>
