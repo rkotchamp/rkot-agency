@@ -1,12 +1,12 @@
 .blog_content_banner {
-  width: 80%;
-  height: auto;
+  width: 60%;
+  height: 311px;
   background-color: var(--dark-primary-color);
 }
 
 .blog_content_banner img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -14,6 +14,7 @@
   display: flex;
   justify-content: space-between;
   gap: 50px;
+  position: relative;
 }
 
 .text_content_and_socials .text_content {
@@ -35,6 +36,11 @@
   color: var(--body-color);
   font-weight: 500;
 }
+
+.titles p {
+  font-family: var(--primary-font-family);
+  color: var(--focus-color);
+}
 .text_content_and_socials .text_content .textBlog p {
   width: 622px;
   height: auto;
@@ -45,6 +51,9 @@
 
 .socialStyleController {
   margin-top: -60px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
 }
 
 .control_content {
@@ -74,14 +83,37 @@
   z-index: 1000;
 }
 
+.embedded-asset {
+  width: 500px;
+  height: auto;
+}
+
+.hyperlink {
+  color: var(--focus-color);
+  font-family: "Raleway";
+  text-decoration: none;
+}
+.rich_headers {
+  font-family: var(--secondary-font-family);
+}
+.preserve-whitespace {
+  white-space: pre-wrap;
+}
+
 /* Tablet */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   .text_content_and_socials {
     display: flex;
     flex-direction: column-reverse;
   }
+  .blog_content_banner {
+    width: 80%;
+  }
   .socialStyleController {
     margin-top: -30px;
+    position: static;
+    top: auto;
+    align-self: flex-start;
   }
   .relatedPosts .posts {
     display: flex;
@@ -96,6 +128,10 @@
 
 /* Mobile Phone */
 @media only screen and (max-width: 600px) {
+  .blog_content_banner {
+    width: 80%;
+  }
+
   .text_content_and_socials {
     display: flex;
     flex-direction: column-reverse;
@@ -104,6 +140,11 @@
     margin-top: -20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: static;
+    top: auto;
+    align-items: center;
+    width: 100%;
   }
   .relatedPosts .posts {
     display: flex;
@@ -122,7 +163,7 @@
     margin-top: 40px;
   }
   .titles h3 {
-    width: 500px;
+    width: 450px;
     font-size: var(--mid-text-font-size);
   }
 

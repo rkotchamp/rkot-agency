@@ -42,13 +42,15 @@
 
 .service_image_and_icons .image_container {
   width: 100%;
-  height: auto;
+  height: 311px;
+  /* height: auto; */
   margin-bottom: 105px;
+  background-color: var(--focus-color);
 }
 
 .service_image_and_icons .image_container img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 

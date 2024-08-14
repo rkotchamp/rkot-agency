@@ -29,12 +29,18 @@ function BlogContent() {
     },
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
-      [BLOCKS.HEADING_3]: (node, children) => <h3>{children}</h3>,
-      [BLOCKS.HEADING_2]: (node, children) => <h2>{children}</h2>,
-      [BLOCKS.HEADING_1]: (node, children) => <h1>{children}</h1>,
-      [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
-      [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
-      [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+      [BLOCKS.HEADING_3]: (node, children) => (
+        <h3 className="rich_headers preserve-whitespace">{children}</h3>
+      ),
+      [BLOCKS.HEADING_2]: (node, children) => (
+        <h2 className="rich_headers">{children}</h2>
+      ),
+      [BLOCKS.HEADING_1]: (node, children) => (
+        <h1 className="rich_headers">{children}</h1>
+      ),
+      [BLOCKS.OL_LIST]: (node, children) => <ol className="">{children}</ol>,
+      [BLOCKS.UL_LIST]: (node, children) => <ul className="">{children}</ul>,
+      [BLOCKS.LIST_ITEM]: (node, children) => <li className="">{children}</li>,
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { title, file } = node.data.target.fields;
         const imageUrl = file.url;
@@ -50,21 +56,7 @@ function BlogContent() {
       },
     },
   };
-  // const RICHTEXT_OPTION = {
-  //   renderNode: {
-  //     [BLOCKS.EMBEDDED_ASSET]: (node) => {
-  //       const { title, file } = node.data.target.fields;
-  //       const imageUrl = `https:${file.url}`;
-  //       return <img src={imageUrl} alt={title} className="embedded-asset" />;
-  //     },
-  //   },
-  //   renderText: (text) => {
-  //     return text.split("\n").reduce((children, textSegment, index) => {
-  //       return [...children, index > 0 && <br key={index} />, textSegment];
-  //     }, []);
-  //   },
-  // };
-  console.log(blogDetails);
+
   return (
     <div className="article_content_container">
       {showNav && <BurgerMenu />}
