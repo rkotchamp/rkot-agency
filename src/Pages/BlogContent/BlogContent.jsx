@@ -86,7 +86,6 @@ function BlogContent() {
                     blogDetails[0]?.fields?.content,
                     RICHTEXT_OPTION
                   )}
-                  {/* <p>{blogDetails[0]?.fields?.content}</p> */}
                 </div>
               </div>
               <div className="socialStyleController">

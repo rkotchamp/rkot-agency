@@ -7,6 +7,7 @@ import Service from "./Pages/ServicePage/Service";
 import About from "./Pages/AboutPage/About";
 import BlogPage from "./Pages/Blogs/BlogPage";
 import BlogContent from "./Pages/BlogContent/BlogContent";
+
 import "./App.css";
 
 function App() {
