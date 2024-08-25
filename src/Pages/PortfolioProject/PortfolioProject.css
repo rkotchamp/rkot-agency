@@ -1,0 +1,120 @@
+.maintainContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coverImageContainer {
+  width: 80%;
+  height: 625px;
+  margin-top: 60px;
+}
+
+.coverImageContainer .imageCover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.apiProjectDetails {
+  width: 80%;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  gap: 20px;
+}
+.apiProjectDetails .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.apiProjectDetails .details .projectHeader {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.apiProjectDetails .details .projectTitle {
+  font-family: "Raleway";
+  text-transform: capitalize;
+}
+
+.renderImageAssetContainer {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(500px, auto);
+  gap: 1.5rem;
+}
+
+.imageAssetRender {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.renderImageAssetContainer .imageAssetRender:nth-child(1) {
+  grid-column: 1/2;
+  grid-row: span 3;
+}
+
+/* Core values and header section */
+.coreValuesAndSummary {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 50px;
+  margin-bottom: 50px;
+  background-color: red;
+}
+.coreValue h3 {
+  font-family: var(--secondary-font-family);
+  text-transform: capitalize;
+}
+
+/* Tablet views*/
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .coverImageContainer {
+    height: 425px;
+  }
+  .apiProjectDetails {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+  .renderImageAssetContainer .imageAssetRender:nth-child(1) {
+    grid-column: 1/3;
+    grid-row: span 2;
+  }
+}
+
+/* Mobile view */
+
+@media only screen and (max-width: 600px) {
+  .coverImageContainer {
+    height: 325px;
+  }
+  .apiProjectDetails {
+    width: 80%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .apiProjectDetails .details {
+    flex-direction: row;
+  }
+  .renderImageAssetContainer {
+    width: 80%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(500px, auto);
+    gap: 1.5rem;
+  }
+  .renderImageAssetContainer .imageAssetRender:nth-child(1) {
+    grid-column: 1/1;
+    grid-row: span 2;
+  }
+}

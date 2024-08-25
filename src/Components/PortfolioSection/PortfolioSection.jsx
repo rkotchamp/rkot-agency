@@ -45,16 +45,8 @@ function PortfolioSection() {
             />
           );
         })}
-        {/* <PortFolioGrid />
-        <PortFolioGrid />
-        <PortFolioGrid />
-        <PortFolioGrid />
-        <PortFolioGrid />
-        <PortFolioGrid /> */}
       </div>
-      {/* <button className="port-button" onClick={showMore}>
-        Unlock Hidden Gems
-      </button> */}
+
       {show ? (
         <button className="port-button" onClick={handleShowLess}>
           Hidden Gems

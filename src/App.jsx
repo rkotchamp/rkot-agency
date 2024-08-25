@@ -7,6 +7,7 @@ import Service from "./Pages/ServicePage/Service";
 import About from "./Pages/AboutPage/About";
 import BlogPage from "./Pages/Blogs/BlogPage";
 import BlogContent from "./Pages/BlogContent/BlogContent";
+import PortfolioProject from "./Pages/PortfolioProject/PortfolioProject";
 
 import "./App.css";
 
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/portfolio/:id" element={<PortfolioProject />} />
         <Route path="/services" element={<Service />} />
         <Route path="/about-us" element={<About />} />
         <Route path="/blogs" element={<BlogPage />} />
