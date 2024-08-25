@@ -53,9 +53,13 @@ function PortfolioProject() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus temporibus sapiente libero accusamus reprehenderit
               iste minima nisi distinctio, voluptates quis, iusto sed porro?
-              magni quasi.
+              magni quasi. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Recusandae dolores maiores fuga vero, laborum cumque
+              voluptatibus ducimus sit? Corrupti debitis omnis dolores fugiat
+              eveniet totam, at iusto placeat recusandae, ex nostrum asperiores
+              sed? Fuga?
             </p>
-            <button>View Site</button>
+            <button className="viewWebsite-btn">View Site</button>
           </div>
         </div>
 

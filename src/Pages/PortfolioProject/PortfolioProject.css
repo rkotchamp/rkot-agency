@@ -69,13 +69,46 @@
   justify-content: center;
   align-items: center;
   gap: 100px;
-  padding: 50px;
+  padding: 60px;
   margin-bottom: 50px;
-  background-color: red;
 }
 .coreValue h3 {
   font-family: var(--secondary-font-family);
   text-transform: capitalize;
+  text-wrap: wrap;
+}
+.coreValue p {
+  font-family: var(--primary-font-family);
+  text-transform: capitalize;
+  padding: 10px;
+  color: var(--focus-color);
+}
+
+.projectSummary {
+  width: 70%;
+  height: auto;
+  /* width: 50%; */
+}
+
+.projectSummary .viewWebsite-btn {
+  width: var(--small-button-width);
+  height: var(--small-button-height);
+  border: none;
+  border-radius: var(--small-button-radius);
+  background-color: var(--focus-color);
+  color: var(--second-primary-color);
+  font-size: 20px;
+  font-family: var(--secondary-font-family);
+  font-weight: var(--button-font-weight);
+  cursor: pointer;
+}
+
+.projectSummary p {
+  text-align: left;
+  text-wrap: wrap;
+  font-size: 18px;
+  font-family: "Raleway";
+  margin-bottom: 20px;
 }
 
 /* Tablet views*/
