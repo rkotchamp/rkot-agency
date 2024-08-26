@@ -70,13 +70,16 @@
   align-items: center;
   gap: 100px;
   margin-bottom: 50px;
-  /* background-color: red; */
+  background-color: var(--body-color);
+  padding: 50px;
 }
 .coreValue h3 {
   font-family: var(--secondary-font-family);
   text-transform: capitalize;
   text-wrap: wrap;
+  color: var(--primary-color);
 }
+
 .coreValue p {
   font-family: var(--primary-font-family);
   text-transform: capitalize;
@@ -90,13 +93,13 @@
 }
 
 .projectSummary .viewWebsite-btn {
-  width: var(--small-button-width);
-  height: var(--small-button-height);
+  width: 150px;
+  height: 50px;
   border: none;
-  border-radius: var(--small-button-radius);
+  border-radius: 30px;
   background-color: var(--focus-color);
   color: var(--second-primary-color);
-  font-size: 20px;
+  font-size: 16px;
   font-family: var(--secondary-font-family);
   font-weight: var(--button-font-weight);
   cursor: pointer;
@@ -111,9 +114,51 @@
   text-wrap: wrap;
   font-size: 18px;
   font-family: "Raleway";
+  /* text-transform: lo; */
+  line-height: 25px;
   margin-bottom: 20px;
   max-width: 80%;
+  color: var(--primary-color);
   /* background-color: red; */
+}
+
+.problem_solution_result_container {
+  width: 90%;
+  /* background-color: red; */
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  gap: 50px;
+}
+
+.problem_solution_result_container .optionStyle {
+  background-color: var(--dark-primary-color);
+  border-radius: 10px;
+  padding: 40px;
+  width: 80%;
+}
+
+.iconAndHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activeToggle {
+  background-color: rgb(210, 224, 248);
+}
+.iconAndHeader .iconStyle {
+  font-size: var(--hero-text-font-size);
+  color: var(--body-color);
+}
+
+.iconAndHeader h3 {
+  font-size: var(--sub-heading-font-size);
+  font-family: var(--secondary-font-family);
+  color: var(--body-color);
 }
 
 /* Tablet views*/
@@ -135,7 +180,7 @@
     flex-direction: column;
     width: 80%;
     gap: 70px;
-    padding: 0;
+    /* padding: 0; */
   }
   .projectSummary {
     width: 100%;
@@ -184,7 +229,7 @@
     flex-direction: column;
     width: 80%;
     gap: 70px;
-    padding: 0;
+    /* padding: 0; */
   }
   .projectSummary {
     width: 100%;
