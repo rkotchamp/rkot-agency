@@ -18,7 +18,7 @@ export function PortfolioContextProvider({ children }) {
         content_type: "portfolioProjects",
       });
       setProject(response.items);
-      console.log(response.items);
+      // console.log(response.items);
     } catch (error) {
       console.error(error);
     }

@@ -42,6 +42,7 @@ function PortfolioSection() {
               industry={item.fields.industry}
               coverImage={item.fields.coverImage.fields.file.url}
               imageAlt={item.fields.coverImage.fields.title}
+              sysId={item.sys.id}
             />
           );
         })}
