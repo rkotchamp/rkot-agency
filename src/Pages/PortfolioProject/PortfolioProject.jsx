@@ -24,9 +24,11 @@ function PortfolioProject() {
   };
   const handleSolutionToggle = () => {
     setSolutionToggle((prev) => !prev);
+    setActiveDropDownStyle("activeDropDown");
   };
   const handleResultToggle = () => {
     setResultToggle((prev) => !prev);
+    setActiveDropDownStyle("activeDropDown");
   };
   // console.log(project);
   const currentProject = project.filter((item) => item.sys.id === id);
