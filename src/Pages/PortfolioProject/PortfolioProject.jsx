@@ -13,12 +13,14 @@ function PortfolioProject() {
   const { showNav } = useContext(NavShowContext);
   const { project, setProject } = useContext(PortfolioContext);
   const { id } = useParams();
-  const [clientToggle, setClientToggle] = useState(true);
+  const [clientToggle, setClientToggle] = useState(false);
   const [solutionToggle, setSolutionToggle] = useState(false);
   const [resultToggle, setResultToggle] = useState(false);
+  const [activeDropDownStyle, setActiveDropDownStyle] = useState("");
 
   const handleClientToggle = () => {
     setClientToggle((prev) => !prev);
+    setActiveDropDownStyle("activeDropDown");
   };
   const handleSolutionToggle = () => {
     setSolutionToggle((prev) => !prev);
@@ -26,7 +28,6 @@ function PortfolioProject() {
   const handleResultToggle = () => {
     setResultToggle((prev) => !prev);
   };
-
   // console.log(project);
   const currentProject = project.filter((item) => item.sys.id === id);
   console.log(currentProject[0]);
@@ -97,77 +98,113 @@ function PortfolioProject() {
             );
           })}
         </div>
+
         {/* problem,solution and  result*/}
         <div className="problem_solution_result_container">
           {/* Clients */}
-          <div className="ourClients optionStyle" onClick={handleClientToggle}>
-            <div
-              className={
-                clientToggle === true
-                  ? "iconAndHeader activeToggle "
-                  : "iconAndHeader"
-              }
-            >
-              <h3>Our Clients</h3>
-              {clientToggle === false && (
-                <RiArrowDownSFill className="iconDown iconStyle" />
-              )}
-              {clientToggle === true && (
-                <RiArrowUpSFill className="iconUp iconStyle" />
-              )}
+          <div
+            className={
+              clientToggle === false
+                ? "ourClients optionStyle"
+                : ` ${activeDropDownStyle}`
+            }
+          >
+            <div className="styleContentContainer">
+              <div
+                className={
+                  clientToggle === true
+                    ? "iconAndHeader activeToggle "
+                    : "iconAndHeader"
+                }
+                onClick={handleClientToggle}
+              >
+                <h3>Our Clients</h3>
+                {clientToggle === false && (
+                  <RiArrowDownSFill className="iconDown iconStyle" />
+                )}
+                {clientToggle === true && (
+                  <RiArrowUpSFill className="iconUp iconStyle" />
+                )}
+              </div>
             </div>
-            {clientToggle && <p>{currentProject[0]?.fields?.clientNeeds}</p>}
+
+            {clientToggle && (
+              <p className="renderedTextFromResultClientSolution">
+                {currentProject[0]?.fields?.clientNeeds}
+              </p>
+            )}
           </div>
+
           {/* Solution */}
           <div
-            className="ourSolution optionStyle"
-            onClick={handleSolutionToggle}
+            className={
+              solutionToggle === false
+                ? "ourSolutions optionStyle"
+                : ` ${activeDropDownStyle}`
+            }
           >
-            <div
-              className={
-                solutionToggle === true
-                  ? "iconAndHeader activeToggle "
-                  : "iconAndHeader"
-              }
-            >
-              <h3>Our Solution</h3>
-              {solutionToggle === false && (
-                <RiArrowDownSFill className="iconDown iconStyle" />
-              )}
+            <div className="styleContentContainer">
+              <div
+                className={
+                  solutionToggle === true
+                    ? "iconAndHeader activeToggle "
+                    : "iconAndHeader"
+                }
+                onClick={handleSolutionToggle}
+              >
+                <h3>Our Solution</h3>
+                {solutionToggle === false && (
+                  <RiArrowDownSFill className="iconDown iconStyle" />
+                )}
 
-              {solutionToggle === true && (
-                <RiArrowUpSFill className="iconUp iconStyle" />
-              )}
+                {solutionToggle === true && (
+                  <RiArrowUpSFill className="iconUp iconStyle" />
+                )}
+              </div>
             </div>
 
             {solutionToggle && (
-              <p>
-                {clientToggle && (
+              <p className="renderedTextFromResultClientSolution">
+                {solutionToggle && (
                   <p>{currentProject[0]?.fields?.ourSolution}</p>
                 )}
               </p>
             )}
           </div>
+
           {/* Results */}
-          <div className="ourResult optionStyle" onClick={handleResultToggle}>
-            <div
-              className={
-                resultToggle === true
-                  ? "iconAndHeader activeToggle "
-                  : "iconAndHeader"
-              }
-            >
-              <h3>The Result</h3>
-              {resultToggle === false && (
-                <RiArrowDownSFill className="iconDown iconStyle" />
-              )}
-              {resultToggle === true && (
-                <RiArrowUpSFill className="iconUp iconStyle" />
-              )}
+          <div
+            className={
+              resultToggle === false
+                ? "ourResult optionStyle"
+                : ` ${activeDropDownStyle}`
+            }
+          >
+            <div className="styleContentContainer">
+              <div
+                className={
+                  resultToggle === true
+                    ? "iconAndHeader activeToggle "
+                    : "iconAndHeader"
+                }
+                onClick={handleResultToggle}
+              >
+                <h3>The Result</h3>
+                {resultToggle === false && (
+                  <RiArrowDownSFill className="iconDown iconStyle" />
+                )}
+                {resultToggle === true && (
+                  <RiArrowUpSFill className="iconUp iconStyle" />
+                )}
+              </div>
             </div>
             {resultToggle && (
               <p>
-                {clientToggle && <p>{currentProject[0]?.fields?.theResult}</p>}
+                {resultToggle && (
+                  <p className="renderedTextFromResultClientSolution">
+                    {currentProject[0]?.fields?.theResult}
+                  </p>
+                )}
               </p>
             )}
           </div>
