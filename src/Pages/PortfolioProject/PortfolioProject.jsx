@@ -5,9 +5,12 @@ import NavShowContext from "../../context/NavShowContext";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { RiArrowUpSFill } from "react-icons/ri";
 import PortfolioContext from "../../context/PortfolioContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import { BiSolidUpArrow } from "react-icons/bi";
+
 import "./PortfolioProject.css";
+import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
+import Footer from "../../Components/Footer/Footer";
 
 function PortfolioProject() {
   const { showNav } = useContext(NavShowContext);
@@ -32,7 +35,7 @@ function PortfolioProject() {
   };
   // console.log(project);
   const currentProject = project.filter((item) => item.sys.id === id);
-  console.log(currentProject[0]);
+
   return (
     <div className="projectContainer">
       {showNav && <BurgerMenu />}
@@ -83,7 +86,12 @@ function PortfolioProject() {
           </div>
           <div className="projectSummary">
             <p>{currentProject[0]?.fields?.projecSummary}</p>
-            <button className="viewWebsite-btn">View Site</button>
+
+            {currentProject[0]?.fields?.pojectUrl && (
+              <Link to={currentProject[0].fields.pojectUrl}>
+                <button className="viewWebsite-btn">View Site</button>
+              </Link>
+            )}
           </div>
         </div>
 
@@ -205,6 +213,9 @@ function PortfolioProject() {
             )}
           </div>
         </div>
+
+        <Testimony />
+        <Footer />
       </div>
     </div>
   );
