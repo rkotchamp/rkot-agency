@@ -167,9 +167,7 @@ function PortfolioProject() {
 
             {solutionToggle && (
               <p className="renderedTextFromResultClientSolution">
-                {solutionToggle && (
-                  <p>{currentProject[0]?.fields?.ourSolution}</p>
-                )}
+                {currentProject[0]?.fields?.ourSolution}
               </p>
             )}
           </div>
@@ -201,12 +199,8 @@ function PortfolioProject() {
               </div>
             </div>
             {resultToggle && (
-              <p>
-                {resultToggle && (
-                  <p className="renderedTextFromResultClientSolution">
-                    {currentProject[0]?.fields?.theResult}
-                  </p>
-                )}
+              <p className="renderedTextFromResultClientSolution">
+                {currentProject[0]?.fields?.theResult}
               </p>
             )}
           </div>

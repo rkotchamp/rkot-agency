@@ -153,6 +153,7 @@
   width: 80%;
   height: 300px;
   transition: height 0.5s ease-in;
+  /* background-color: red; */
 }
 
 .iconAndHeader {
@@ -167,7 +168,6 @@
 
 .activeToggle {
   background-color: rgb(239, 234, 234);
-  /* padding: 20px; */
 }
 .iconAndHeader .iconStyle {
   font-size: var(--mid-text-font-size);
@@ -193,6 +193,7 @@
   width: 80%;
   font-family: "Raleway";
   font-size: 18px;
+  /* background-color: red; */
 }
 
 /* Tablet views*/
