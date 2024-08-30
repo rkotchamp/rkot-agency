@@ -49,6 +49,9 @@ nav .navButtons {
   font-weight: var(--button-font-weight);
   cursor: pointer;
 }
+.navButtons .cta_Button:hover {
+  background-color: var(--light-focus-color);
+}
 
 .navButtons .burger_Button {
   width: var(--smallest-button-width);

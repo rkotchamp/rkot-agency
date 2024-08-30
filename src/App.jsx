@@ -8,9 +8,10 @@ import About from "./Pages/AboutPage/About";
 import BlogPage from "./Pages/Blogs/BlogPage";
 import BlogContent from "./Pages/BlogContent/BlogContent";
 import PortfolioProject from "./Pages/PortfolioProject/PortfolioProject";
-
+import ReactGA from "react-ga4";
 import "./App.css";
 
+ReactGA.initialize("your GA measurement id");
 function App() {
   const { showNav } = useContext(NavShowContext);
 

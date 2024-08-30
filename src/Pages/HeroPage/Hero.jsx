@@ -3,11 +3,13 @@ import NavBar from "../../Components/NavBar/NavBar";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import writingBoardImage from "../../assets/Images/land3 1.png";
 import NavShowContext from "../../context/NavShowContext";
+import ScrollToContactContext from "../../context/ScrollContactContext";
 
 import "./Hero.css";
 
 function Hero() {
   const { hideNav, showNav } = useContext(NavShowContext);
+  const { scrollToContact } = useContext(ScrollToContactContext);
 
   return (
     <div className="hero_container">
@@ -24,7 +26,9 @@ function Hero() {
             </h1>
           </div>
           <div className="btnContainer">
-            <button className="main-btn">Elevate Your Brand Now</button>
+            <button className="main-btn" onClick={scrollToContact}>
+              Elevate Your Brand Now
+            </button>
           </div>
         </div>
         <div className="section-heroPicture">

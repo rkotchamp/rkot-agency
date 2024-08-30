@@ -43,6 +43,9 @@
   font-weight: var(--hero-text-font-weight);
 }
 
+.section-heroText .main-btn:hover {
+  background-color: var(--light-focus-color);
+}
 /* ipad devices */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   .hero_container .divisions {
