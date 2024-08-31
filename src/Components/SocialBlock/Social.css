@@ -19,6 +19,7 @@
   font-size: var(--mid-text-font-size);
   color: var(--focus-color);
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .callToActionSpace {

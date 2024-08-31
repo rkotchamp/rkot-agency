@@ -26,7 +26,6 @@ function PortfolioSection({ all, web, brand, logo }) {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, [location]);
-  console.log(project);
 
   // All web apps
   const WebProjects = project.filter(
@@ -53,7 +52,7 @@ function PortfolioSection({ all, web, brand, logo }) {
         <h2>From boardroom to browser, we tailor success with design.</h2>
       </div>
       <div className="portfolio-grid">
-        {all &&
+        {(all || location.pathname !== "/portfolio") &&
           project.slice(0, visibleCount).map((item, index) => {
             return (
               <PortFolioGrid

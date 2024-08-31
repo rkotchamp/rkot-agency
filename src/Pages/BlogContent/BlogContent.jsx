@@ -11,6 +11,7 @@ import BlogContext from "../../context/BlogContext";
 import "./BlogContent.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import CopyPopUp from "../../Components/CopyPopUp/CopyPopUp";
 
 function BlogContent() {
   const { hideNav, showNav } = useContext(NavShowContext);
@@ -60,7 +61,7 @@ function BlogContent() {
       },
     },
   };
-  console.log(blogDetails[0]?.fields.domain);
+
   return (
     <div className="article_content_container">
       {showNav && <BurgerMenu />}
@@ -89,6 +90,7 @@ function BlogContent() {
                 </div>
               </div>
               <div className="socialStyleController">
+                {/* <CopyPopUp /> */}
                 <Social />
               </div>
             </div>

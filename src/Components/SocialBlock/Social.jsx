@@ -1,13 +1,33 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { BsFacebook } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
 import { PiLink } from "react-icons/pi";
 import ScrollToContactContext from "../../context/ScrollContactContext";
 import "./Social.css";
+import CopyPopUp from "../CopyPopUp/CopyPopUp";
 
 function Social() {
+  // Hooks
   const { scrollToContact } = useContext(ScrollToContactContext);
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  //  Functions
+  const copyToClipboard = async () => {
+    const getTheUrl = window.location.href;
+    try {
+      await navigator.clipboard.writeText(getTheUrl);
+      console.log(getTheUrl);
+      setShowPopUp(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleUnmount = () => {
+    setShowPopUp(false);
+  };
+
   return (
     <div className="social_blog_container">
       <div className="shareAndSocial">
@@ -16,10 +36,10 @@ function Social() {
           <BsFacebook className="socIcons" />
           <FaSquareXTwitter className="socIcons" />
           <FaPinterest className="socIcons" />
-          <PiLink className="socIcons" />
+          <PiLink className="socIcons" onClick={copyToClipboard} />
         </div>
       </div>
-
+      {showPopUp && <CopyPopUp unMount={handleUnmount} />}
       <div className="callToActionSpace">
         <div className="questAndDescription">
           <p className="question">Want a free Consultation?</p>

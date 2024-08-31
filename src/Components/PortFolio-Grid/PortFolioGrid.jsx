@@ -1,6 +1,3 @@
-// import { useContext } from "react";
-import PortfolioContext from "../../context/PortfolioContext";
-import gridImage from "../../assets/Images/Rectangle .png";
 import { Link } from "react-router-dom";
 import "./PortFolio-Grid.css";
 
