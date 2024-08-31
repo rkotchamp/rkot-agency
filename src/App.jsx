@@ -9,6 +9,7 @@ import BlogPage from "./Pages/Blogs/BlogPage";
 import BlogContent from "./Pages/BlogContent/BlogContent";
 import PortfolioProject from "./Pages/PortfolioProject/PortfolioProject";
 import ReactGA from "react-ga4";
+import PageNotFound from "./Pages/PageNotFound/PageNotFound";
 import "./App.css";
 
 ReactGA.initialize("your GA measurement id");
@@ -36,6 +37,7 @@ function App() {
         <Route path="/about-us" element={<About />} />
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/blogs/:id" element={<BlogContent />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
   );

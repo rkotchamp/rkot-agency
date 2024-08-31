@@ -29,8 +29,8 @@ function Footer() {
             amazing creativity
           </p>
           <p>
-            <a href="mailto:rkotcreativesolutions@gmail.com">
-              Email: rkotcreativesolutions@gmail.com
+            <a href="mailto:project@rkotdesigns.com">
+              Email: project@rkotdesigns.com
             </a>
           </p>
           <p>

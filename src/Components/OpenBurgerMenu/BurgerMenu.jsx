@@ -73,7 +73,7 @@ function BurgerMenu() {
               href="mailto:rkotcreativesolutions@gmail.com"
               onClick={hideNavClick}
             >
-              rkotcreativesolutions@gmail.com
+              project@rkotdesigns.com
             </a>
           </p>
         </div>
