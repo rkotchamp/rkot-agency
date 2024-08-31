@@ -7,11 +7,12 @@
   height: 60px;
   background-color: var(--body-color);
   display: flex;
-  flex-direction: column;
+
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   opacity: 1;
   animation: fadeOut 2s forwards;
+  z-index: 1000;
 }
 
 .popUp-container p {

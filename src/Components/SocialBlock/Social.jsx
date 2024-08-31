@@ -13,7 +13,8 @@ function Social() {
   const [showPopUp, setShowPopUp] = useState(false);
 
   //  Functions
-  const copyToClipboard = async () => {
+  const copyToClipboard = async (e) => {
+    e.preventDefault();
     const getTheUrl = window.location.href;
     try {
       await navigator.clipboard.writeText(getTheUrl);
