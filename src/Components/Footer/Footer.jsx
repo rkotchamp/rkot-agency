@@ -1,6 +1,7 @@
 import logoSec from "../../assets/Images/rkotlogo.png";
 
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -15,10 +16,18 @@ function Footer() {
       <div className="navContainer">
         <p>Navigation</p>
         <ul>
-          <li>Home</li>
-          <li>Our Works</li>
-          <li>Our Services</li>
-          <li>About Us</li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/portfolio">
+            <li>Our Works</li>
+          </Link>
+          <Link to="/services">
+            <li>Our Services</li>
+          </Link>
+          <Link to="about-us">
+            <li>About Us</li>
+          </Link>
         </ul>
       </div>
       <div className="contactArea">

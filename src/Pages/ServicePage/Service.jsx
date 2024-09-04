@@ -74,27 +74,19 @@ function Service() {
           <div className="web style__Text__Content__Services">
             <p className="styleHeaders">web design / development</p>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Porttitor neque gravida
-              aliquet faucibus quisque. Id nibh at amet accumsan. Eu amet
-              elementum malesuada porttitor a sed id libero dui. Pellentesque
-              ornare ullamcorper urna amet tellus tellus ante sed. Mattis a sit
-              vel egestas ullamcorper morbi quisque. Dui pretium pretium
-              habitant turpis ipsum aliquam scelerisque nunc nibh. Pretium
-              molestie nulla amet aliquet. Posuere orci nisl ac platea ac tellus
-              egestas facilisi. Duis nunc urna cras euismod in risus.
+              Elevate your online presence with our customer-focused,
+              quality-driven web development services. We create responsive,
+              user-friendly websites tailored to your needs, ensuring a seamless
+              and engaging experience for your audience.
             </p>
           </div>
           <div className="logo_identity style__Text__Content__Services">
             <p className="styleHeaders">Logo & brand identity</p>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Porttitor neque gravida
-              aliquet faucibus quisque. Id nibh at amet accumsan. Eu amet
-              elementum malesuada porttitor a sed id libero dui. Pellentesque
-              ornare ullamcorper urna amet tellus tellus ante sed. Mattis a sit
-              vel egestas ullamcorper morbi quisque. Dui pretium pretium
-              habitant turpis ipsum aliquam scelerisque nunc nibh. Pretium
-              molestie nulla amet aliquet. Posuere orci nisl ac platea ac tellus
-              egestas facilisi. Duis nunc urna cras euismod in risus.
+              Build a strong, cohesive brand identity with our expert design
+              services. We focus on creating a unified visual and emotional
+              experience, from logos to color schemes, that resonates with your
+              audience and enhances your brand’s presence.
             </p>
           </div>
         </div>

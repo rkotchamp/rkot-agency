@@ -33,25 +33,29 @@ function About() {
       <section className="aboutSection">
         <div className="about__text">
           <p>About Us</p>
-          <h2>we are passionate about your success</h2>
+          <h2>We Are Passionate About Your Success</h2>
         </div>
 
         <div className="longText">
           <p>
-            Lorem ipsum dolor sit amet consectetur. Turpis feugiat dolor
-            molestie bibendum ac malesuada. Metus metus mi amet ultrices nulla
-            est nulla. Duis mauris et vitae libero integer ipsum. Nascetur
-            iaculis in et viverra. Egestas rutrum tincidunt nisi nunc laoreet
-            dictumst orci. Vel congue arcu ac bibendum posuere in nullam amet
-            habitasse. Arcu aliquet ut iaculis pretium consectetur magna in
-            quis. At magna consectetur quam nisi a. Felis sed et pellentesque
-            tortor urna ut. Sed faucibus blandit mi blandit gravida orci varius
-            porta. Mauris mauris in amet pretium. Pellentesque mattis accumsan
-            pretium et purus. Sit vulputate ullamcorper vulputate viverra a
-            rutrum aliquam. Nunc id convallis luctus gravida tristique. Habitant
-            sit id risus sodales suspendisse condimentum dictum tincidunt.
-            Phasellus viverra massa est aliquet nec et lobortis sit facilisis.
-            Facilisis at sed natoque in. Massa{" "}
+            At RKOT, we are dedicated to helping small and medium-sized
+            businesses overcome the challenges of growth in today’s digital
+            world. We understand that scaling a business can be difficult,
+            especially when it comes to establishing and maintaining a strong
+            online presence.
+            <br />
+            <br /> Our mission is to empower businesses that may not have the
+            resources or expertise to fully harness the power of digital
+            platforms. We are committed to helping you build a strong brand,
+            improve your visibility, and connect with your audience in
+            meaningful ways. <br />
+            <br />
+            We believe that every business, no matter its size, deserves the
+            opportunity to thrive online. That's why we focus on creating
+            tailored solutions that meet your unique needs, allowing you to
+            focus on what you do best—running your business. Our team is
+            passionate about your success, and we’re here to support you every
+            step of the way.
           </p>
         </div>
       </section>

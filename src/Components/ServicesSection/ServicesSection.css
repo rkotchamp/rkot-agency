@@ -49,6 +49,8 @@
 .firstPane .notes p span {
   border-bottom: 2px solid var(--primary-color);
   text-transform: uppercase;
+  cursor: pointer;
+  color: var(--focus-color);
 }
 
 .secondPane {

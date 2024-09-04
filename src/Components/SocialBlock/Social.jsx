@@ -4,8 +4,9 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
 import { PiLink } from "react-icons/pi";
 import ScrollToContactContext from "../../context/ScrollContactContext";
-import "./Social.css";
 import CopyPopUp from "../CopyPopUp/CopyPopUp";
+import { FaLinkedin } from "react-icons/fa";
+import "./Social.css";
 
 function Social() {
   // Hooks
@@ -32,8 +33,9 @@ function Social() {
   return (
     <div className="social_blog_container">
       <div className="shareAndSocial">
-        <p className="share_text">Share this article</p>
+        <p className="share_text">Enjoyed the read? Share it!</p>
         <div className="socialIcons">
+          <FaLinkedin className="socIcons" />
           <BsFacebook className="socIcons" />
           <FaSquareXTwitter className="socIcons" />
           <FaPinterest className="socIcons" />
@@ -45,9 +47,9 @@ function Social() {
         <div className="questAndDescription">
           <p className="question">Want a free Consultation?</p>
           <p className="call_description">
-            Lectus at cras elit a morbi lectus nisl. Sem amet quam odio vitae
-            habitant blandit. Suspendisse at metus commodo nibh at. Tellus amet
-            sem non commodo sit. Dolor sed nisi maecenas ut l
+            Join over 100+ businesses that have transformed their online
+            presence with our expert guidance. Whether you're just starting or
+            looking to scale, we're here to help you succeed.
           </p>
         </div>
         <button className="blog_btn" onClick={scrollToContact}>

@@ -318,7 +318,7 @@ function Contact() {
           {/* services */}
           {activeTab === 1 && (
             <div className="contactService">
-              <h2>what do you need help with?</h2>
+              <h2>Which areas of your project need expert attention?</h2>
               <div className="chooseService">
                 {Services.map((service, indx) => {
                   return (
@@ -353,7 +353,7 @@ function Contact() {
                 })}
               </div>
               <textarea
-                placeholder="Any More Description?"
+                placeholder="Anything we should know to assist you better?"
                 value={formData.ProjectDescription}
                 name="ProjectDescription"
                 onChange={handleFormChange}
@@ -364,7 +364,10 @@ function Contact() {
             <div className="projectDetails">
               <h2>Lets talk about your needs</h2>
               <div className="tellMore textSpace">
-                <label htmlFor="">Please tell us more about your project</label>
+                <label htmlFor="">
+                  What specific challenges are you facing with your current
+                  website or design?
+                </label>
                 <textarea
                   name="AboutProject"
                   value={formData.AboutProject}
@@ -373,7 +376,8 @@ function Contact() {
               </div>
               <div className="deadLine textSpace">
                 <label htmlFor="">
-                  When would you like your project to start?
+                  What’s the most critical goal you hope to achieve with this
+                  project?
                 </label>
                 <textarea
                   name="KickDate"
