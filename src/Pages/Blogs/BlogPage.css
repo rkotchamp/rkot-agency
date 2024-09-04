@@ -33,9 +33,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
   /* background-color: var(--focus-color); */
-  opacity: 0.4;
+  opacity: 0.6;
   z-index: 1;
 }
 .coverImage {
@@ -89,6 +89,11 @@
     align-items: center;
     flex-flow: 1;
   }
+
+  .content_main_banner h2 {
+    width: 400px;
+    font-size: 30px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -98,5 +103,9 @@
   }
   .styleEntirePage {
     width: 90%;
+  }
+  .content_main_banner h2 {
+    width: 400px;
+    font-size: 30px;
   }
 }
