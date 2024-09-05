@@ -7,6 +7,7 @@ import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimon
 import Footer from "../../Components/Footer/Footer";
 import { createClient } from "contentful";
 import BlogContext from "../../context/BlogContext";
+
 import "./BlogPage.css";
 
 function BlogPage() {

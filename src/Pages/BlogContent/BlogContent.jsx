@@ -8,10 +8,12 @@ import Blog from "../../Components/Blog/Blog";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
 import BlogContext from "../../context/BlogContext";
-import "./BlogContent.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import CopyPopUp from "../../Components/CopyPopUp/CopyPopUp";
+import { Helmet } from "react-helmet";
+
+import "./BlogContent.css";
 
 function BlogContent() {
   const { hideNav, showNav } = useContext(NavShowContext);
@@ -20,6 +22,7 @@ function BlogContent() {
 
   // Filter to find the blog post with the matching id
   const blogDetails = realBlog.filter((item) => item.sys.id === id);
+  console.log(blogDetails);
 
   const currentDomain = blogDetails[0]?.fields.domain;
   const relatedPosts = realBlog.filter(
@@ -64,6 +67,22 @@ function BlogContent() {
 
   return (
     <div className="article_content_container">
+      <Helmet>
+        <title>{blogDetails[0]?.fields?.title}</title>
+        <meta property="og:title" content={blogDetails[0]?.fields?.title} />
+        <meta
+          property="og:description"
+          content={blogDetails[0]?.fields?.summaryNote}
+        />
+        <meta
+          property="og:image"
+          content={blogDetails[0]?.fields?.coverImage?.fields?.file?.url}
+        />
+        <meta
+          property="og:url"
+          content={`https://yourwebsite.com/posts/${id}`}
+        />
+      </Helmet>
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
 
@@ -91,7 +110,11 @@ function BlogContent() {
               </div>
               <div className="socialStyleController">
                 {/* <CopyPopUp /> */}
-                <Social />
+                <Social
+                  imageBannerUrl={
+                    blogDetails[0]?.fields?.coverImage?.fields?.file?.url
+                  }
+                />
               </div>
             </div>
           </>

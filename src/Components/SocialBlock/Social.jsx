@@ -6,12 +6,30 @@ import { PiLink } from "react-icons/pi";
 import ScrollToContactContext from "../../context/ScrollContactContext";
 import CopyPopUp from "../CopyPopUp/CopyPopUp";
 import { FaLinkedin } from "react-icons/fa";
+
 import "./Social.css";
 
-function Social() {
+function Social({ imageBannerUrl }) {
   // Hooks
   const { scrollToContact } = useContext(ScrollToContactContext);
   const [showPopUp, setShowPopUp] = useState(false);
+
+  const blogUrl = window.location.href;
+
+  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    blogUrl
+  )}`;
+  const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    blogUrl
+  )}&text=Check out this great blog post!&via=YourTwitterHandle`;
+  const pinterestShareUrl = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(
+    blogUrl
+  )}&media=${encodeURIComponent(
+    imageBannerUrl
+  )}&description=Check out this post!`;
+  const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    blogUrl
+  )}`;
 
   //  Functions
   const copyToClipboard = async (e) => {
@@ -35,10 +53,18 @@ function Social() {
       <div className="shareAndSocial">
         <p className="share_text">Enjoyed the read? Share it!</p>
         <div className="socialIcons">
-          <FaLinkedin className="socIcons" />
-          <BsFacebook className="socIcons" />
-          <FaSquareXTwitter className="socIcons" />
-          <FaPinterest className="socIcons" />
+          <a href={linkedinShareUrl} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="socIcons" />
+          </a>
+          <a href={facebookShareUrl} target="_blank" rel="noopener noreferrer">
+            <BsFacebook className="socIcons" />
+          </a>
+          <a href={twitterShareUrl} target="_blank" rel="noopener noreferrer">
+            <FaSquareXTwitter className="socIcons" />
+          </a>
+          <a href={pinterestShareUrl} target="_blank" rel="noopener noreferrer">
+            <FaPinterest className="socIcons" />
+          </a>
           <PiLink className="socIcons" onClick={copyToClipboard} />
         </div>
       </div>
