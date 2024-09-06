@@ -36,14 +36,26 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .testimonials__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .testimonials__container h2 {
     height: 80px;
   }
 
   .testimonials__container .message {
-    width: 450px;
-    height: 200px;
-    max-width: 450px;
-    max-height: 200px;
+    width: 80%;
+
+    text-align: center;
+    /* background-color: red; */
+  }
+
+  .locoAuthor {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -357,6 +357,7 @@ function Contact() {
                 value={formData.ProjectDescription}
                 name="ProjectDescription"
                 onChange={handleFormChange}
+                className="serviceTextarea"
               ></textarea>
             </div>
           )}
