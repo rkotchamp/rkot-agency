@@ -1,3 +1,4 @@
 .home_container {
   position: relative;
+  overflow-x: hidden;
 }
