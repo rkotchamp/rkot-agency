@@ -136,7 +136,7 @@
 /* Mobile Phone */
 @media only screen and (max-width: 600px) {
   .blog_content_banner {
-    width: 80%;
+    width: 90%;
   }
 
   .text_content_and_socials {
@@ -164,27 +164,68 @@
     height: auto;
   }
   .text_content_and_socials .text_content .titles {
-    width: 322px;
+    width: 90%;
     height: 160px;
     margin-bottom: 30px;
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .titles h3 {
-    width: 450px;
+    width: 70%;
     font-size: var(--mid-text-font-size);
   }
 
   .textBlog {
-    width: 500px;
+    width: 100%;
     height: auto;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .textBlog p {
-    width: 500px !important;
+    width: 80% !important;
     height: auto;
-    padding: 10px;
+    padding: 10px 30px;
+    text-align: center;
   }
   .relatedPosts {
     width: 500px;
+  }
+
+  .embedded-asset {
+    width: 70%;
+    height: auto;
+  }
+
+  .rich_headers {
+    font-size: 15px;
+    width: 100%;
+    font-family: var(--secondary-font-family);
+
+    text-align: center;
+  }
+
+  .textBlog ol {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textBlog ol li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .textBlog ul {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
