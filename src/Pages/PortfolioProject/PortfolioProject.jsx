@@ -110,6 +110,7 @@ function PortfolioProject() {
         </div>
 
         {/* problem,solution and  result*/}
+
         <div className="problem_solution_result_container">
           {/* Clients */}
           <div

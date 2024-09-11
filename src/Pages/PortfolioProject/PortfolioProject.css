@@ -270,7 +270,7 @@
     flex-direction: column;
     width: 80%;
     gap: 70px;
-    /* padding: 0; */
+    padding: 30px 10px;
   }
   .projectSummary {
     width: 100%;
@@ -285,5 +285,38 @@
     font-size: 18px;
     margin-bottom: 50px;
     max-width: 100%;
+  }
+
+  /* Client,solution results */
+
+  .styleContentContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+  }
+
+  .problem_solution_result_container .optionStyle {
+    width: 100%;
+  }
+
+  .activeDropDown {
+    width: 100%;
+    padding: 0 0 15px 0;
+  }
+
+  .iconAndHeader {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .problem_solution_result_container {
+    padding: 60px 30px;
+    gap: 30px;
+  }
+
+  .iconAndHeader h3 {
+    font-size: var(--small-text-font-size);
   }
 }
