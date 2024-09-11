@@ -266,6 +266,7 @@ body.burger-menu-closed {
     font-size: 12px;
     font-family: var(--secondary-font-family);
     cursor: pointer;
+    padding: 10px;
   }
   .first__division .contactPane p:hover {
     text-decoration: underline;
