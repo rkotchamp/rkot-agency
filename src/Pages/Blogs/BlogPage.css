@@ -19,7 +19,7 @@
 .content_main_banner {
   width: 100%;
   height: 352px;
-  background-color: var(--focus-color);
+  /* background-color: var(--focus-color); */
   display: flex;
   align-items: last baseline;
   padding: 50px;
