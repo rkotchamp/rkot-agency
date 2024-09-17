@@ -8,6 +8,7 @@ import secondMember from "../../assets/Images/secondMember.png";
 import ServicesSection from "../../Components/ServicesSection/ServicesSection";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
+import SEO from "../../Components/SEO/SEO";
 import "./About.css";
 
 function About() {
@@ -17,6 +18,14 @@ function About() {
 
   return (
     <div className="about__container">
+      <SEO
+        title=""
+        companyName="Rkot Designs"
+        description=""
+        type="summary"
+        imageCoverUrl=""
+        pageUrl={` https://rkotdesign.com/portfolio`}
+      />
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
       <div className="styleElements">

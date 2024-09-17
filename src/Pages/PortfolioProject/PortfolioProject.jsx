@@ -6,6 +6,7 @@ import { RiArrowDownSFill } from "react-icons/ri";
 import { RiArrowUpSFill } from "react-icons/ri";
 import PortfolioContext from "../../context/PortfolioContext";
 import { Link, useParams } from "react-router-dom";
+import SEO from "../../Components/SEO/SEO";
 // import { BiSolidUpArrow } from "react-icons/bi";
 
 import "./PortfolioProject.css";
@@ -38,6 +39,14 @@ function PortfolioProject() {
 
   return (
     <div className="projectContainer">
+      <SEO
+        title=""
+        companyName="Rkot Designs"
+        description=""
+        type="summary"
+        imageCoverUrl={currentProject[0]?.fields?.coverImage?.fields?.file?.url}
+        pageUrl={` https://rkotdesign.com/portfolio/${currentProject[0]?.sys?.id}`}
+      />
       {showNav && <BurgerMenu />}
       <NavBar />
       <div className="maintainContent">

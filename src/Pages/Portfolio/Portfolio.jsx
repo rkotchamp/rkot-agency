@@ -7,6 +7,7 @@ import ServicesSection from "../../Components/ServicesSection/ServicesSection";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
 // import PortfolioContext from "../../context/PortfolioContext";
+import SEO from "../../Components/SEO/SEO";
 import "./Portfolio.css";
 
 function Portfolio() {
@@ -45,6 +46,14 @@ function Portfolio() {
 
   return (
     <div className="portfolioContainer">
+      <SEO
+        title=""
+        companyName="Rkot Designs"
+        description=""
+        type="summary"
+        imageCoverUrl=""
+        pageUrl={` https://rkotdesign.com/portfolio`}
+      />
       {showNav && <BurgerMenu />}
       <NavBar />
       {/* <div className="infoSpace">

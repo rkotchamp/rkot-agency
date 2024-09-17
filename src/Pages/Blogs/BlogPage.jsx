@@ -7,7 +7,7 @@ import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimon
 import Footer from "../../Components/Footer/Footer";
 import { createClient } from "contentful";
 import BlogContext from "../../context/BlogContext";
-
+import SEO from "../../Components/SEO/SEO";
 import "./BlogPage.css";
 
 function BlogPage() {
@@ -36,8 +36,20 @@ function BlogPage() {
     getBlogPage();
   }, [getBlogPage]);
 
+  console.log(blogPage[0]?.fields.pageCover?.fields?.file?.url);
+
   return (
     <div className="blogPage_container">
+      {blogPage.length > 0 && (
+        <SEO
+          title={blogPage[0]?.fields.title}
+          companyName="Rkot Designs"
+          description="Blogs to improve the creative side of your business"
+          type="summary"
+          imageCoverUrl={blogPage[0]?.fields.pageCover?.fields?.file?.url}
+          pageUrl="https://rkotdesign.com/blogs"
+        />
+      )}
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
 

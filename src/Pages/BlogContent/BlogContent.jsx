@@ -10,8 +10,9 @@ import Footer from "../../Components/Footer/Footer";
 import BlogContext from "../../context/BlogContext";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import SEO from "../../Components/SEO/SEO";
 import CopyPopUp from "../../Components/CopyPopUp/CopyPopUp";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 import "./BlogContent.css";
 
@@ -22,7 +23,6 @@ function BlogContent() {
 
   // Filter to find the blog post with the matching id
   const blogDetails = realBlog.filter((item) => item.sys.id === id);
-  console.log(blogDetails);
 
   const currentDomain = blogDetails[0]?.fields.domain;
   const relatedPosts = realBlog.filter(
@@ -67,22 +67,15 @@ function BlogContent() {
 
   return (
     <div className="article_content_container">
-      <Helmet>
-        <title>{blogDetails[0]?.fields?.title}</title>
-        <meta property="og:title" content={blogDetails[0]?.fields?.title} />
-        <meta
-          property="og:description"
-          content={blogDetails[0]?.fields?.summaryNote}
-        />
-        <meta
-          property="og:image"
-          content={blogDetails[0]?.fields?.coverImage?.fields?.file?.url}
-        />
-        <meta
-          property="og:url"
-          content={`https://yourwebsite.com/posts/${id}`}
-        />
-      </Helmet>
+      <SEO
+        title={blogDetails[0]?.fields?.title}
+        companyName="Rkot Designs"
+        description={blogDetails[0]?.fields?.summaryNote}
+        type="summary"
+        imageCoverUrl={blogDetails[0]?.fields?.coverImage?.fields?.file?.url}
+        pageUrl={`https://rkotdesigns.com/blogs/${id}`}
+      />
+
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
 

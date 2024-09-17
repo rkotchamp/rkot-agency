@@ -10,6 +10,7 @@ import PortfolioSection from "../../Components/PortfolioSection/PortfolioSection
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
 import Footer from "../../Components/Footer/Footer";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
+import SEO from "../../Components/SEO/SEO";
 import "./Service.css";
 
 function Service() {
@@ -19,6 +20,14 @@ function Service() {
 
   return (
     <div className="service__container">
+      <SEO
+        title=""
+        companyName="Rkot Designs"
+        description=""
+        type="summary"
+        imageCoverUrl=""
+        pageUrl="https://rkotdesign.com/blogs"
+      />
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
       <div className="styleContainer">
