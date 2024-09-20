@@ -4,7 +4,7 @@ function Testimonials() {
   return (
     <div className="testimonials__container">
       <p>Testimonials</p>
-      <h2>What are people Saying?</h2>
+      <h2>What are people Saying about Rkot?</h2>
       <p className="message">
         I’m really happy with the logo and branding that Rkot created for my
         business! They listened to what I wanted and came up with a design that

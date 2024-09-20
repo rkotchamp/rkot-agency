@@ -49,7 +49,9 @@ function PortfolioSection({ all, web, brand, logo }) {
     <div className="portfolio-container">
       <div className="portfolio-header">
         <p>Our Portfolio</p>
-        <h2>From boardroom to browser, we tailor success with design.</h2>
+        <h2>
+          Tailored Design Solutions: From Boardroom to Browser, We Craft Success
+        </h2>
       </div>
       <div className="portfolio-grid">
         {(all || location.pathname !== "/portfolio") &&

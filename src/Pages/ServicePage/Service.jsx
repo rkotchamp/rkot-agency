@@ -21,12 +21,12 @@ function Service() {
   return (
     <div className="service__container">
       <SEO
-        title=""
+        title="Logo, Web Design & SEO for Small Businesses| Rkot Designs"
         companyName="Rkot Designs"
-        description=""
+        description="Offering expert logo design, brand identity, web design, SEO, and marketing services for small businesses. Transform your brand and grow with our tailored digital solutions."
         type="summary"
-        imageCoverUrl=""
-        pageUrl="https://rkotdesign.com/blogs"
+        imageCoverUrl={agencyImage}
+        pageUrl="https://rkotdesign.com/services"
       />
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
@@ -36,7 +36,9 @@ function Service() {
             <p>
               we have the skills and experience to deliver high quality works
             </p>
-            <h2>Our Digital services to help you transform your business</h2>
+            <h1>
+              Logo Design, Web Design, SEO & Branding for Small Businesses
+            </h1>
           </div>
 
           <div className="service_image_and_icons">

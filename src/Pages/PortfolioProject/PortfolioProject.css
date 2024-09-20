@@ -73,11 +73,12 @@
   background-color: var(--body-color);
   padding: 50px;
 }
-.coreValue h3 {
+.coreValue h1 {
   font-family: var(--secondary-font-family);
   text-transform: capitalize;
   text-wrap: wrap;
   color: var(--primary-color);
+  font-size: var(--sub-heading-font-size);
 }
 
 .coreValue p {

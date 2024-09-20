@@ -47,9 +47,9 @@ function Portfolio() {
   return (
     <div className="portfolioContainer">
       <SEO
-        title=""
+        title="Branding & Web Design Portfolio | Tailored Design Solutions"
         companyName="Rkot Designs"
-        description=""
+        description="Explore our portfolio of branding, logo design, and web design projects. We deliver tailored design solutions for small businesses, enhancing brand identity and online success."
         type="summary"
         imageCoverUrl=""
         pageUrl={` https://rkotdesign.com/portfolio`}

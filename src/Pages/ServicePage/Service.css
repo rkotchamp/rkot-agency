@@ -27,12 +27,13 @@
   font-size: var(--small-subHeading-font-size);
 }
 
-.service__headers .headersPane h2 {
+.service__headers .headersPane h1 {
   width: 540px;
   height: 94px;
   font-family: var(--secondary-font-family);
   text-transform: uppercase;
   font-weight: 700;
+  font-size: var(--sub-heading-font-size);
 }
 
 .service_image_and_icons {
@@ -173,7 +174,7 @@
     height: 50px;
     font-size: 12px;
   }
-  .service__headers .headersPane h2 {
+  .service__headers .headersPane h1 {
     font-size: var(--small-subHeading-font-size);
     max-width: 312px;
     height: 63px;

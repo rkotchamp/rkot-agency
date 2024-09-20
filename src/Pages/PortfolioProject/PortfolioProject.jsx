@@ -39,14 +39,19 @@ function PortfolioProject() {
 
   return (
     <div className="projectContainer">
-      <SEO
-        title=""
-        companyName="Rkot Designs"
-        description=""
-        type="summary"
-        imageCoverUrl={currentProject[0]?.fields?.coverImage?.fields?.file?.url}
-        pageUrl={` https://rkotdesign.com/portfolio/${currentProject[0]?.sys?.id}`}
-      />
+      {currentProject.length > 0 && (
+        <SEO
+          title={currentProject[0]?.fields?.coreValues}
+          companyName="Rkot Designs"
+          description={currentProject[0]?.fields?.projecSummary}
+          type="summary"
+          imageCoverUrl={
+            currentProject[0]?.fields?.coverImage?.fields?.file?.url
+          }
+          pageUrl={` https://rkotdesign.com/portfolio/${currentProject[0]?.sys?.id}`}
+        />
+      )}
+
       {showNav && <BurgerMenu />}
       <NavBar />
       <div className="maintainContent">
@@ -91,7 +96,7 @@ function PortfolioProject() {
         <div className="coreValuesAndSummary">
           <div className="coreValue">
             <p> {currentProject[0]?.fields?.projectName}</p>
-            <h3>{currentProject[0]?.fields?.coreValues}</h3>
+            <h1>{currentProject[0]?.fields?.coreValues}</h1>
           </div>
           <div className="projectSummary">
             <p>{currentProject[0]?.fields?.projecSummary}</p>
