@@ -19,12 +19,12 @@ function About() {
   return (
     <div className="about__container">
       <SEO
-        title=""
+        title="Rkot | Web Design & Brand Identity for Small & Medium Businesses"
         companyName="Rkot Designs"
-        description=""
+        description="RKOT is a leading web design and brand identity agency helping small and medium businesses thrive. We provide web design services, logo design, and tailored branding identity services"
         type="summary"
-        imageCoverUrl=""
-        pageUrl={` https://rkotdesign.com/portfolio`}
+        imageCoverUrl={aboutImage}
+        pageUrl="https://rkotdesign.com/about-us"
       />
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}
@@ -32,7 +32,10 @@ function About() {
         <div className="about__header__image">
           <div className="about__headers">
             <p>Design and marketing agency</p>
-            <h2>A solid and committed team that ensures your success</h2>
+            <h2>
+              A COMMITTED WEB DESIGN AND BRAND IDENTITY AGENCY DEDICATED TO YOUR
+              SUCCESS
+            </h2>
           </div>
           <div className="about__image__container">
             <img src={aboutImage} alt="What rkot creative solutions is about" />
@@ -42,29 +45,27 @@ function About() {
       <section className="aboutSection">
         <div className="about__text">
           <p>About Us</p>
-          <h2>We Are Passionate About Your Success</h2>
+          <h2>We Help Small and Medium Businesses Succeed Online</h2>
         </div>
 
         <div className="longText">
           <p>
             At RKOT, we are dedicated to helping small and medium-sized
             businesses overcome the challenges of growth in today’s digital
-            world. We understand that scaling a business can be difficult,
-            especially when it comes to establishing and maintaining a strong
-            online presence.
+            world. As a leading web design agency, we specialize in brand
+            identity design services and logo design, ensuring that your online
+            presence reflects your core values.We know that scaling a business
+            can be difficult, especially when it comes to creating an impactful
+            and cohesive brand identity.
             <br />
-            <br /> Our mission is to empower businesses that may not have the
-            resources or expertise to fully harness the power of digital
-            platforms. We are committed to helping you build a strong brand,
-            improve your visibility, and connect with your audience in
-            meaningful ways. <br />
+            <br /> Our mission is to empower businesses to fully harness the
+            power of digital platforms with tailored web design services that
+            improve visibility, build brand trust, and connect with your
+            audience. <br />
             <br />
-            We believe that every business, no matter its size, deserves the
-            opportunity to thrive online. That's why we focus on creating
-            tailored solutions that meet your unique needs, allowing you to
-            focus on what you do best—running your business. Our team is
-            passionate about your success, and we’re here to support you every
-            step of the way.
+            Whether you need web page designers near you or branding identity
+            services, our team delivers expert solutions so you can focus on
+            what you do best—running your business.
           </p>
         </div>
       </section>
