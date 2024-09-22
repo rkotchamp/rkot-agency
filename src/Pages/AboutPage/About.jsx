@@ -3,7 +3,7 @@ import NavShowContext from "../../context/NavShowContext";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import aboutImage from "../../assets/Images/aboutImage.png";
 import NavBar from "../../Components/NavBar/NavBar";
-import firstImage from "../../assets/Images/firstMember.png";
+import reuben from "../../assets/Images/reuben-min.jpg";
 import secondMember from "../../assets/Images/secondMember.png";
 import ServicesSection from "../../Components/ServicesSection/ServicesSection";
 import Testimony from "../../Components/Testimonials&Contacts/Testimony/Testimony";
@@ -77,12 +77,12 @@ function About() {
           <div className="first__member memberContainer">
             <div className="memberImageContainer">
               <img
-                src={firstImage}
-                alt="James Jones web developer at Rkot creatives"
+                src={reuben}
+                alt="Reuben Omaano-Tetteh web developer at Rkot designs"
               />
             </div>
-            <p className="membersName">James Jones</p>
-            <p>Web Developer</p>
+            <p className="membersName">Reuben Tetteh</p>
+            <p>Web Developer/Designer</p>
           </div>
           <div className="second__member memberContainer">
             <div className="memberImageContainer">
