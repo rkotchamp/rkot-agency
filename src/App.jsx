@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavShowContext from "./context/NavShowContext";
 import Home from "./Pages/HomePage/Home";
