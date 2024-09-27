@@ -24,7 +24,8 @@ function About() {
         description="RKOT is a leading web design and brand identity agency helping small and medium businesses thrive. We provide web design services, logo design, and tailored branding identity services"
         type="summary"
         imageCoverUrl={aboutImage}
-        pageUrl="https://rkotdesign.com/about-us"
+        pageUrl="https://www.rkotdesigns.com/about-us"
+        canLink="https://www.rkotdesigns.com/about-us"
       />
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}

@@ -73,7 +73,8 @@ function BlogContent() {
         description={blogDetails[0]?.fields?.summaryNote}
         type="summary"
         imageCoverUrl={blogDetails[0]?.fields?.coverImage?.fields?.file?.url}
-        pageUrl={`https://rkotdesigns.com/blogs/${id}`}
+        pageUrl={`https://www.rkotdesigns.com/blogs/${id}`}
+        canLink={`https://www.rkotdesigns.com/blogs/${id}`}
       />
 
       {showNav && <BurgerMenu />}

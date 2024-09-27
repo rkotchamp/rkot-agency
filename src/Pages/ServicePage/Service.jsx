@@ -26,7 +26,8 @@ function Service() {
         description="Offering expert logo design, brand identity, web design, SEO, and marketing services for small businesses. Transform your brand and grow with our tailored digital solutions."
         type="summary"
         imageCoverUrl={agencyImage}
-        pageUrl="https://rkotdesign.com/services"
+        pageUrl="https://www.rkotdesigns.com/services"
+        canLink="https://www.rkotdesigns.com/services"
       />
       {showNav && <BurgerMenu />}
       {hideNav && <NavBar />}

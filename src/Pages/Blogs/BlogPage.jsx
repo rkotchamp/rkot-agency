@@ -47,7 +47,8 @@ function BlogPage() {
           description="Blogs to improve the creative side of your business"
           type="summary"
           imageCoverUrl={blogPage[0]?.fields.pageCover?.fields?.file?.url}
-          pageUrl="https://rkotdesign.com/blogs"
+          pageUrl="https://www.rkotdesigns.com/blogs"
+          canLink="https://www.rkotdesigns.com/blogs"
         />
       )}
       {showNav && <BurgerMenu />}

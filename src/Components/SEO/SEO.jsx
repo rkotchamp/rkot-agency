@@ -7,6 +7,7 @@ function SEO({
   type,
   imageCoverUrl,
   pageUrl,
+  canLink,
 }) {
   return (
     <Helmet>
@@ -24,6 +25,7 @@ function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageCoverUrl} />
+      <link rel="canonical" href={canLink} />
     </Helmet>
   );
 }

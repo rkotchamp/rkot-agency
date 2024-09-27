@@ -48,7 +48,8 @@ function PortfolioProject() {
           imageCoverUrl={
             currentProject[0]?.fields?.coverImage?.fields?.file?.url
           }
-          pageUrl={` https://rkotdesign.com/portfolio/${currentProject[0]?.sys?.id}`}
+          pageUrl={`https://www.rkotdesigns.com/portfolio${currentProject[0]?.sys?.id}`}
+          canLink={`https://www.rkotdesigns.com/portfolio${currentProject[0]?.sys?.id}`}
         />
       )}
 

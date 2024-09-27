@@ -52,7 +52,8 @@ function Portfolio() {
         description="Explore our portfolio of branding, logo design, and web design projects. We deliver tailored design solutions for small businesses, enhancing brand identity and online success."
         type="summary"
         imageCoverUrl=""
-        pageUrl={` https://rkotdesign.com/portfolio`}
+        pageUrl="https://www.rkotdesigns.com/portfolio"
+        canLink="https://www.rkotdesigns.com/portfolio"
       />
       {showNav && <BurgerMenu />}
       <NavBar />
