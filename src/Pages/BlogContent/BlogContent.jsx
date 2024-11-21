@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../../Components/NavBar/NavBar";
 import NavShowContext from "../../context/NavShowContext";
@@ -65,6 +65,20 @@ function BlogContent() {
     },
   };
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.leadconnectorhq.com/loader.js";
+    script.async = true;
+    script.dataset.resourcesUrl =
+      "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
+    document.body.appendChild(script);
+
+    // Cleanup the script on unmount
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="article_content_container">
       <SEO
@@ -130,6 +144,12 @@ function BlogContent() {
           <Testimony />
         </div>
         <Footer />
+      </div>
+
+      <div>
+        <chat-widget
+          location-id={import.meta.env.WIDGET_LOCATION_ID}
+        ></chat-widget>
       </div>
     </div>
   );

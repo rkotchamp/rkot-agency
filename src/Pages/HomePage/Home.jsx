@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Hero from "../HeroPage/Hero";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import PortfolioSection from "../../Components/PortfolioSection/PortfolioSection";
@@ -13,6 +13,20 @@ import "./Home.css";
 
 function Home() {
   const { showNav } = useContext(NavShowContext);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.leadconnectorhq.com/loader.js";
+    script.async = true;
+    script.dataset.resourcesUrl =
+      "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
+    document.body.appendChild(script);
+
+    // Cleanup the script on unmount
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="home_container">
@@ -33,6 +47,11 @@ function Home() {
       <AboutSection />
       <Testimony />
       <Footer />
+      <div>
+        <chat-widget
+          location-id={import.meta.env.WIDGET_LOCATION_ID}
+        ></chat-widget>
+      </div>
     </div>
   );
 }

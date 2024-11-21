@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import BurgerMenu from "../../Components/OpenBurgerMenu/BurgerMenu";
 import NavBar from "../../Components/NavBar/NavBar";
 import NavShowContext from "../../context/NavShowContext";
@@ -36,6 +36,20 @@ function PortfolioProject() {
   };
   // console.log(project);
   const currentProject = project.filter((item) => item.sys.id === id);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widgets.leadconnectorhq.com/loader.js";
+    script.async = true;
+    script.dataset.resourcesUrl =
+      "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
+    document.body.appendChild(script);
+
+    // Cleanup the script on unmount
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="projectContainer">
@@ -232,6 +246,11 @@ function PortfolioProject() {
 
         <Testimony />
         <Footer />
+        <div>
+          <chat-widget
+            location-id={import.meta.env.WIDGET_LOCATION_ID}
+          ></chat-widget>
+        </div>
       </div>
     </div>
   );
