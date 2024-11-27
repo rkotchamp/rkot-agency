@@ -40,7 +40,7 @@ function BlogContent() {
       [BLOCKS.HEADING_3]: (node, children) => (
         <h3 className="rich_headers preserve-whitespace">{children}</h3>
       ),
-      [BLOCKS.HEADING_3]: (node, children) => (
+      [BLOCKS.HEADING_4]: (node, children) => (
         <h4 className="rich_headers preserve-whitespace">{children}</h4>
       ),
       [BLOCKS.HEADING_2]: (node, children) => (
