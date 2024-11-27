@@ -36,7 +36,9 @@ function BlogContent() {
       [MARKS.ITALIC]: (text) => <em>{text}</em>,
     },
     renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="paraRichTExt">{children}</p>
+      ),
       [BLOCKS.HEADING_3]: (node, children) => (
         <h3 className="rich_headers preserve-whitespace">{children}</h3>
       ),
@@ -50,7 +52,9 @@ function BlogContent() {
         <h1 className="rich_headers">{children}</h1>
       ),
       [BLOCKS.OL_LIST]: (node, children) => <ol className="">{children}</ol>,
-      [BLOCKS.UL_LIST]: (node, children) => <ul className="">{children}</ul>,
+      [BLOCKS.UL_LIST]: (node, children) => (
+        <ul className="unordered">{children}</ul>
+      ),
       [BLOCKS.LIST_ITEM]: (node, children) => <li className="">{children}</li>,
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { title, file } = node.data.target.fields;
