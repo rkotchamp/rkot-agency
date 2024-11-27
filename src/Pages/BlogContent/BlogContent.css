@@ -99,6 +99,10 @@
   color: var(--focus-color);
   font-family: "Raleway";
   text-decoration: none;
+  cursor: pointer;
+}
+.hyperlink:hover {
+  text-decoration: underline;
 }
 .rich_headers {
   font-family: var(--secondary-font-family);
