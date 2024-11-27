@@ -76,7 +76,8 @@
 
    </url>
 
-   <!-- Blogs -->
+   <!-- Blog Main Page -->
+
    <url>
 
       <loc>https://www.rkotdesigns.com/blogs/</loc>
@@ -88,5 +89,22 @@
       <priority>0.9</priority>
 
    </url>
+
+
+   <!-- Blog content -->
+   <url>
+
+      <loc>https://www.rkotdesigns.com/blogs/3c7bH8bYwsNXQZ5KoFgnv8</loc>
+
+      <lastmod>2024-11-27</lastmod>
+
+      <changefreq>yearly</changefreq>
+
+      <priority>0.9</priority>
+
+   </url>
+  
+
+
 
 </urlset> 
