@@ -26,6 +26,11 @@ function SEO({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageCoverUrl} />
       <link rel="canonical" href={canLink} />
+      {/* Google */}
+      <meta
+        name="google-site-verification"
+        content="1CyfFQJytkVbTW3S88qkMYaNEFEyFcwYc_xDoZX5nK0"
+      />
     </Helmet>
   );
 }
