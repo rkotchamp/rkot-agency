@@ -16,20 +16,6 @@ function About() {
 
   const { showNav } = useContext(NavShowContext);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets.leadconnectorhq.com/loader.js";
-    script.async = true;
-    script.dataset.resourcesUrl =
-      "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
-    document.body.appendChild(script);
-
-    // Cleanup the script on unmount
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className="about__container">
       <SEO
@@ -68,10 +54,10 @@ function About() {
             At RKOT, we are dedicated to helping small and medium-sized
             businesses overcome the challenges of growth in today’s digital
             world. As a leading web design agency, we specialize in brand
-            identity design services and logo design, ensuring that your online
-            presence reflects your core values.We know that scaling a business
-            can be difficult, especially when it comes to creating an impactful
-            and cohesive brand identity.
+            identity design services and logo design,custom app development
+            ensuring that your online presence reflects your core values.We know
+            that scaling a business can be difficult, especially when it comes
+            to creating an impactful and cohesive brand identity.
             <br />
             <br /> Our mission is to empower businesses to fully harness the
             power of digital platforms with tailored web design services that
@@ -101,21 +87,19 @@ function About() {
           </div>
           <div className="second__member memberContainer">
             <div className="memberImageContainer">
-              <img src={secondMember} alt="" />
+              <img
+                src={secondMember}
+                alt="andrew carri web developer and digital marketer at rkot designs"
+              />
             </div>
             <p className="membersName">Andrew Carri</p>
-            <p>digital Marketer</p>
+            <p>Digital Marketer</p>
           </div>
         </div>
       </section>
       <ServicesSection />
       <Testimony />
       <Footer />
-      <div>
-        <chat-widget
-          location-id={import.meta.env.WIDGET_LOCATION_ID}
-        ></chat-widget>
-      </div>
     </div>
   );
 }

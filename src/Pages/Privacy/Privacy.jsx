@@ -145,7 +145,7 @@ function Privacy() {
       </p>
       <ul>
         <p>Rkot Designs</p>
-        <li>Email: project@rkotdesigns.com</li>
+        <li>Email: rkotcreativesolutions@gmail.com</li>
         <li>Phone:+40756432854</li>
       </ul>
     </div>

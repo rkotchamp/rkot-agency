@@ -37,20 +37,6 @@ function PortfolioProject() {
   // console.log(project);
   const currentProject = project.filter((item) => item.sys.id === id);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets.leadconnectorhq.com/loader.js";
-    script.async = true;
-    script.dataset.resourcesUrl =
-      "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
-    document.body.appendChild(script);
-
-    // Cleanup the script on unmount
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className="projectContainer">
       {currentProject.length > 0 && (
@@ -246,11 +232,6 @@ function PortfolioProject() {
 
         <Testimony />
         <Footer />
-        <div>
-          <chat-widget
-            location-id={import.meta.env.WIDGET_LOCATION_ID}
-          ></chat-widget>
-        </div>
       </div>
     </div>
   );

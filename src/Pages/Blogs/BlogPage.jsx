@@ -36,20 +36,6 @@ function BlogPage() {
     getBlogPage();
   }, [getBlogPage]);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widgets.leadconnectorhq.com/loader.js";
-    script.async = true;
-    script.dataset.resourcesUrl =
-      "https://widgets.leadconnectorhq.com/chat-widget/loader.js";
-    document.body.appendChild(script);
-
-    // Cleanup the script on unmount
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   // console.log(blogPage[0]?.fields.pageCover?.fields?.file?.url);
 
   return (
@@ -93,11 +79,6 @@ function BlogPage() {
       </div>
       <Testimony />
       <Footer />
-      <div>
-        <chat-widget
-          location-id={import.meta.env.WIDGET_LOCATION_ID}
-        ></chat-widget>
-      </div>
     </div>
   );
 }

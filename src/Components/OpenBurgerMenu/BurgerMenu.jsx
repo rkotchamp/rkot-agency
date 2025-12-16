@@ -69,8 +69,11 @@ function BurgerMenu() {
             <a href="tel:+40756432854">+40756432854</a>
           </p>
           <p>
-            <a href="mailto:project@rkotdesigns.com" onClick={hideNavClick}>
-              project@rkotdesigns.com
+            <a
+              href="mailto:rkotcreativesolutions@gmail.com"
+              onClick={hideNavClick}
+            >
+              rkotcreativesolutions@gmail.com
             </a>
           </p>
         </div>
