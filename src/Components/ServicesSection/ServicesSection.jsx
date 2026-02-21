@@ -23,14 +23,7 @@ function ServicesSection() {
         </div>
       </div>
       <div className="secondPane">
-        <div className="firstWeb">
-          <p className="headingsIn">#Web development</p>
-          <p className="text">
-            We pride ourselves on being a customer-focused, quality-driven
-            design agency that can support all of your web development needs.
-          </p>
-        </div>
-        <div className="firstWeb">
+<div className="firstWeb">
           <p className="headingsIn">#Logo Design</p>
           <p className="text">
             We pride ourselves on being a customer-focused, quality-driven
