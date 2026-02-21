@@ -83,16 +83,7 @@ function Service() {
         </div>
 
         <div className="serviceTextSpace ">
-          <div className="web style__Text__Content__Services">
-            <p className="styleHeaders">web design / development</p>
-            <p>
-              Elevate your online presence with our customer-focused,
-              quality-driven web development services. We create responsive,
-              user-friendly websites tailored to your needs, ensuring a seamless
-              and engaging experience for your audience.
-            </p>
-          </div>
-          <div className="logo_identity style__Text__Content__Services">
+<div className="logo_identity style__Text__Content__Services">
             <p className="styleHeaders">Logo & brand identity</p>
             <p>
               Build a strong, cohesive brand identity with our expert design
