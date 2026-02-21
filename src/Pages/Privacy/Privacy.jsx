@@ -4,12 +4,23 @@ function Privacy() {
   return (
     <div className="privacy">
       <h1>Privacy Policy</h1>
-      <p>Effective Date:11th December,2024</p>
+      <p>Effective Date: 11th December, 2024</p>
+
+      <h3 className="private-subheads">Legal Information</h3>
       <p>
-        Rkot designs is committed to protecting your privacy. This Privacy
+        This website is operated under the trade name <strong>Rkot Designs</strong>.
+        The legal entity behind this business is{" "}
+        <strong>OMAANO TETTEH REUBEN PERSOANĂ FIZICĂ AUTORIZATĂ</strong>, a
+        legally registered sole trader (Persoană Fizică Autorizată) in Romania.
+        Any reference to "Rkot Designs", "we", "us", or "our" throughout this
+        Privacy Policy refers to this legal entity.
+      </p>
+
+      <p>
+        Rkot Designs is committed to protecting your privacy. This Privacy
         Policy explains how we collect, use, disclose, and safeguard your
-        information when you visit our website [Insert Website URL] and engage
-        with our branding and website development services.
+        information when you visit our website and engage with our branding and
+        website development services.
         <br />
         By accessing or using our services, you agree to the terms of this
         Privacy Policy. If you do not agree with these terms, please do not use
@@ -144,9 +155,12 @@ function Privacy() {
         we handle your information, please contact us at:
       </p>
       <ul>
-        <p>Rkot Designs</p>
+        <p>
+          Rkot Designs<br />
+          <em>(OMAANO TETTEH REUBEN PERSOANĂ FIZICĂ AUTORIZATĂ)</em>
+        </p>
         <li>Email: rkotcreativesolutions@gmail.com</li>
-        <li>Phone:+40756432854</li>
+        <li>Phone: +40756432854</li>
       </ul>
     </div>
   );
