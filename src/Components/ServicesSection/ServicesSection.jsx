@@ -44,6 +44,14 @@ function ServicesSection() {
             design agency that can meet all of your brand identity needs.
           </p>
         </div>
+        <div className="firstWeb">
+          <p className="headingsIn">#Custom Web App / SaaS</p>
+          <p className="text">
+            We design and build custom web applications and SaaS platforms
+            tailored to your business needs — from concept to a fully functional
+            product.
+          </p>
+        </div>
       </div>
     </div>
   );

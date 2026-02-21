@@ -155,10 +155,7 @@ function Privacy() {
         we handle your information, please contact us at:
       </p>
       <ul>
-        <p>
-          Rkot Designs<br />
-          <em>(OMAANO TETTEH REUBEN PERSOANĂ FIZICĂ AUTORIZATĂ)</em>
-        </p>
+        <p>Rkot Designs</p>
         <li>Email: rkotcreativesolutions@gmail.com</li>
         <li>Phone: +40756432854</li>
       </ul>

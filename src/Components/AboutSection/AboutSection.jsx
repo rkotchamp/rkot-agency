@@ -30,6 +30,15 @@ function AboutSection() {
           stunning visuals to building a cohesive brand identity, we are here to
           support you every step of the way.
         </p>
+        <p>
+          We also build our own products.{" "}
+          <a href="https://www.postmoo.re" target="_blank" rel="noreferrer">
+            <strong>Postmore</strong>
+          </a>{" "}
+          is our in-house SaaS platform — a testament to our capability to
+          design and develop fully functional, scalable web applications from
+          concept to launch.
+        </p>
       </div>
     </div>
   );
