@@ -1,0 +1,100 @@
+.privacy {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 126px;
+  padding-bottom: 100px;
+  color: var(--primary-color);
+}
+
+.privacy h1 {
+  font-family: var(--secondary-font-family);
+  font-size: var(--hero-text-font-size);
+  font-weight: var(--hero-text-font-weight);
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.privacy > p {
+  font-family: var(--primary-font-family);
+  font-size: var(--small-subHeading-font-size);
+  color: var(--focus-color);
+  margin-bottom: 48px;
+}
+
+.private-subheads {
+  font-family: var(--secondary-font-family);
+  font-size: var(--sub-heading-font-size);
+  font-weight: var(--sub-heading-font-weight);
+  text-transform: uppercase;
+  color: var(--focus-color);
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.private-subheads2,
+.private-subhead2 {
+  font-family: var(--secondary-font-family);
+  font-size: var(--body-font-size);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: 28px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.privacy p {
+  font-family: var(--primary-font-family);
+  font-size: var(--small-subHeading-font-size);
+  color: var(--primary-color);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.privacy ul {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.privacy ul li {
+  font-family: var(--primary-font-family);
+  font-size: var(--small-subHeading-font-size);
+  color: var(--primary-color);
+  line-height: 2;
+}
+
+.privacy ul p {
+  font-family: var(--primary-font-family);
+  font-size: var(--small-subHeading-font-size);
+  color: var(--dark-primary-color);
+  margin-bottom: 4px;
+}
+
+/* Tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .privacy {
+    width: 90%;
+    padding-top: 100px;
+  }
+
+  .privacy h1 {
+    font-size: var(--mid-text-font-size);
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+  .privacy {
+    width: 90%;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .privacy h1 {
+    font-size: var(--mid-text-font-size);
+  }
+
+  .private-subheads {
+    font-size: var(--body-font-size);
+  }
+}

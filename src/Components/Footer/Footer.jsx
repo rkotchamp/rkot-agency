@@ -28,6 +28,9 @@ function Footer() {
           <Link to="/about-us">
             <li>About Us</li>
           </Link>
+          <Link to="/privacy">
+            <li>Privacy Policy</li>
+          </Link>
         </ul>
       </div>
       <div className="contactArea">
